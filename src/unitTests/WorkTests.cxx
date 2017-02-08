@@ -7,7 +7,7 @@ public:
 	TEST_FIXTURE( WorkTests )
 	{
 		TEST_CASE( testTitle_byDefault );
-//		TEST_CASE( testTitle_addingTitle );
+		TEST_CASE( testTitle_addingTitle );
 //		TEST_CASE( testReference_byDefault )
 //		TEST_CASE( testReference_addingReference )
 //		TEST_CASE( testOriginal_byDefault );
@@ -20,13 +20,13 @@ public:
 		Work work;
 		ASSERT_EQUALS( "-- Untitled --", work.title() );
 	}
-	/*void testTitle_addingTitle()
+	void testTitle_addingTitle()
 	{
 		Work work;
 		work.title( "A Title" );
 		ASSERT_EQUALS( "A Title", work.title() );
 	}
-	void testReference_byDefault()
+	/*void testReference_byDefault()
 	{
 		Work work;
 		ASSERT_EQUALS( -1, work.isbn() );

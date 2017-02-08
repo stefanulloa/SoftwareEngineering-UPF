@@ -1,5 +1,4 @@
 
-
 #ifndef _WORK_HXX_
 #define _WORK_HXX_
 
