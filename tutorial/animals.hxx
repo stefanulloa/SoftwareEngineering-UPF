@@ -1,11 +1,6 @@
 #ifndef animals_hxx
 #define animals_hxx
 
-/*
-   - ara afegim un nou atribut a la base de tipus std::string
-   - afegim accessors d'escriptura i de lectura
- */
-
 #include <iostream>
 #include <string>
 
