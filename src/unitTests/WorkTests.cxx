@@ -1,11 +1,12 @@
 #include "MiniCppUnit.hxx"
+#include "Work.hxx"
 
 class WorkTests : public TestFixture<WorkTests>
 {
 public:
 	TEST_FIXTURE( WorkTests )
 	{
-//		TEST_CASE( testTitle_byDefault );
+		TEST_CASE( testTitle_byDefault );
 //		TEST_CASE( testTitle_addingTitle );
 //		TEST_CASE( testReference_byDefault )
 //		TEST_CASE( testReference_addingReference )
@@ -14,12 +15,12 @@ public:
 //		TEST_CASE( testAText_byDefault );
 //		TEST_CASE( testAText_initialized );
 	}
-/*	void testTitle_byDefault()
+	void testTitle_byDefault()
 	{
 		Work work;
 		ASSERT_EQUALS( "-- Untitled --", work.title() );
 	}
-	void testTitle_addingTitle()
+	/*void testTitle_addingTitle()
 	{
 		Work work;
 		work.title( "A Title" );
