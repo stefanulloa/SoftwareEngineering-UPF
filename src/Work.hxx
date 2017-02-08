@@ -6,7 +6,7 @@ class Work {
 	
 	public: 
 		std::string title() const {
-			return "";
+			return "-- Untitled --";
 		}
 };
 
