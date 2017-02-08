@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 
+
 class Animal
 {
 public:
@@ -57,3 +58,33 @@ public:
 };
 
 #endif
+
+typedef std::list<Animal*> Animals;
+
+class Jaula
+{
+    
+public: virtual void nom(std::string elNom)
+        {
+		_nom = elNom;
+	}
+	std::string& nom()
+	{
+		return _nom;
+	}
+        void enjaular(Animal animal){
+            animalesEnJaula.push_back(&animal);
+        }
+        void nombrar(){
+            for (Animals::iterator it=animalesEnJaula.begin(); it!=animalesEnJaula.end(); it++){
+                std::cout << "" << (*it)->nom() << ", ";
+            }
+        }
+    
+private:
+	std::string _nom;
+        Animals animalesEnJaula;
+        
+};
+
+typedef std::list<Jaula*> Zoo;

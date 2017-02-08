@@ -22,12 +22,26 @@
 #include "animals.hxx"
 
 typedef std::list<Animal*> Animals;
+typedef std::list<Jaula*> Zoo;
 
 int main(void)
 {
 	Animals animals;
+        Zoo jaulas;
 
 	// introduïm un de cada tipus
+        Jaula Uno;
+        Jaula Dos;
+        Jaula Tres;
+        
+        Uno.nom("JualaUno");
+        Dos.nom("JaulaDos");
+        Tres.nom("JaulaTres");
+        
+        jaulas.push_back(&Uno);
+        jaulas.push_back(&Dos);
+        jaulas.push_back(&Tres);
+        
 	Animal unAnimal;
 	unAnimal.nom("Pikatxu");
 	animals.push_back(&unAnimal);
@@ -44,12 +58,17 @@ int main(void)
 	unGat.nom("Gat Amb Botes");
 	animals.push_back(&unGat);
 
+        Uno.enjaular(unAnimal);
+        Dos.enjaular(unElefant);
+        Uno.enjaular(unaGranota);
+        Tres.enjaular(unGat);
+        
 
 	// iterem fent servir iteradors
-	for (Animals::iterator it=animals.begin(); it!=animals.end(); it++)
+	for (Zoo::iterator it=jaulas.begin(); it!=jaulas.end(); it++)
 	{
-		std::cout << "l'animal anomenat " << (*it)->nom() << " es de l'especie ";
-		(*it)->escriuEspecie();
+		std::cout << "La " << (*it)->nom() << " contiene ";
+                (*it)->nombrar();
 	}
 
 	return 0;
