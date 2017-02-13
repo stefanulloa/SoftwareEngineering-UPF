@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Seminario 2</title>
+</head>
+
+<body>
+
+<!-- Menú de navegación del sitio -->
+<ul class="navbar">
+  <li><a href="Index.html">Página principal</a>
+</ul>
+
+<!-- Contenido principal -->
+<h1>Seminario 2</h1>
+
+<b><p><big>Tasks</big></b>
+<b><p>1.1 Caso de uso: Validar trabajo Subido.</b>
+<style type="text/css">
+  body {
+    color: purple;
+    background-color: #d8da3d }
+  </style>
+<p><b>Contexto:</b>
+<p>Un editor quiere comprobar que una obra está en la web.
+<p><b>Actor primario:</b>
+<p>Editor. 
+<p><b>Actores de Soporte: </b>
+<p>Ninguno.
+<p><b>Stakeholder implicados:</b>
+<p>Melting Port, OurCode.
+<p><b>Precondiciones:</b>
+<p>El editor tiene que poder comunicarse con el sistema.
+<p><b>Post Condiciones de éxito:</b>
+<p>El editor comprueba que la obra está en la web.
+<p><b>Post Condiciones de fracaso:</b>
+<p>El editor comprueba que la obra no está en la web.
+<p><b>Escenario principal de éxito durante la compra: (Basic Flow)</b>
+<p>1.El editor tiene que tener acceso a los trabajos de los autores recibidos.
+<p>2.El editor pasa el trabajo a un formato estándar.
+<p>3.EL editor sube el trabajo en el nuevo formato a la web.
+<p>4.La web sube el trabajo.
+<p>5.El editor accede a la web como usuario.
+<p>6. La web permite navegar  por las obras que se encuentran dentro de la web.
+<p>7.El editor busca su trabajo.
+<p>8.La web se lo muestra(la obra está disponible en la web).
+<p>9.El editor da el visto bueno a la obra en la web (la obra es accesible para los clientes).
+<b><p>Extensiones:</b>
+<p>4.a. La web no sube el trabajo porque no está en formato estándar.
+<p>4.a.1 Se le notifica al editor y se vuelve al paso 2. 
+<p>8.a. La web no muestra el trabajo  cuando el editor la busca.
+<p>8.a.1. El editor al observar que no está, vuelve al paso 3 para volver a subir el trabajo.
+
+<p><b>1.2 Caso de uso: Comprar un Libro.</b>
+<p><b>Contexto: </b>
+<p>El usuario quiere comprar un libro.
+<p><b>Actores primarios: </b>
+<p>Usuario (generaliza a Autor, Cliente y Administrador).
+<p><b>Actores de Soporte: </b>
+<p>Ninguno
+<p><b>Stakeholder implicados: </b>
+<p>Administrador, programador.
+<p><b>Precondiciones:</b>
+<p>El usuario tiene que estar registrado y validado en el sistema (para poder acceder al servicio de compras).
+<p><b>Post Condiciones de éxito:</b>
+<p>El usuario compra el libro.
+<p><b>Post Condiciones de fracaso:</b>
+<p>El usuario no consigue comprar el libro.
+<p><b>Escenario principal de éxito durante la compra: (Basic Flow)</b>
+<p>1.El usuario indica que quiere comprar un libro.
+<p>2.El sistema pide al usuario el tipo de libro que quiere comprar (de acción, terror, novela, etc).
+<p>3.El usuario elige el tipo de libro que quiere comprar.
+<p>4.El sistema verifica el stock del tipo de libro escogido por el usuario.
+<p>5.El sistema pide los datos necesarios para realizar la compra.
+<p>6.El usuario introduce los datos pedidos.
+<p>7.El sistema verifica que los datos introducidos por el usuario sean correctos.
+<p>8.El sistema devuelve la confirmación.
+<p>9.El sistema solicita los datos bancarios.
+<p>10.EL usuario introduce los datos bancarios.
+<p>11.El sistema verifica que los datos bancarios sean correctos y permite realizar la compra del libro.
+<p><b>Extensiones:</b>
+<p>7.a. Si algun dato no es correcto.
+<p>7.a.1.Volvemos al paso 5.
+<p>10.a.Si algún dato bancario es incorrecto.
+<p>10.a.1 Volvemos al paso 9.
+
+<p><b>2 Diagrama de relaciones</b>
+
+<body>
+<h1><center><img src="Diagrama1.png" alt="W3C" width="800" height="700"></h1>
+</body>
+
+<p><b>4. Glosario</b>
+<p>OurCode: Empresa encargada del proyecto. Esto incluye todo tipo de profesionales (programadores, diseñadores, etc.)
+<p>MeltingPot: Trabajadores afectados por la web, quienes trabajan con ella, y directivos que reciben análisis de los resultados de la web y ordenan cambios sobre esta.
+<p>Clientes: Usuarios que deberían de poder usar la web fácilmente.
+<p>Autores: Profesionales que deberían de quedar satisfechos con las presentaciones de sus obras en la web, así como el manejo de esta misma.
+<p>Paypal: Compañía encargada de tramitar las donaciones de los usuarios.
+<p>Servicios (pago, mensajería): [Es un punto oscuro, puesto que no se ha especificado nada sobre estos en el texto].
+<p>Formatos de edición de texto (PDF, Latex, Word, etc.): Herramientas útiles para que los autores escriban y envíen su trabajo a la web.
+<p>Métodos de adquisición de obras: Esto incluye las opciones de compra, como descarga de formato on-line o envío de formato físico. 
+
+<p><b>5. Lista de puntos oscuros</b>
+
+<p>¿Pueden los clientes hacer peticiones sobre cambios de nuevos servicios en la web?
+<p>¿Quién se encarga de las entidades responsables del pago on-line y mensajería? ¿Qué entidades o qué características específicas deberían tener estas.
+<p>¿Deberá ser para algún tipo de dispositivo específico  o ser un producto multiplataforma?
+<p>¿Puede un libro estar en más de una categoría? Cómo afectaría eso al precio y al porcentaje que recibe al autor, se puede cambiar el libro de categoría después de establecer un precio?
+<p>El diseño visual de la página no la especifican.
+<p>Piden que la web tenga unas funcionalidades pero no las especifican.
+<p>Especifican al autor que puede subir obras en unos formatos concretos pero luego el autor puede subirlos en otro formato y pedirle a la editorial que vuelva a un formato estándar.
+<p>No especifica si hay algún límite de tamaño para el autor en sus obras al subirlas.
+<p>¿Se busca un sistemas de valoraciones de obras por parte de los usuarios? ¿Cómo se querría su implementación?
+<p>¿Se busca un sistemas de recomendaciones de obras para los usuarios? ¿Cómo se querría su implementación?
+<p>¿Las obras se agruparán en secciones por género, autor, año, etc.?
+
+<!-- Firma y fecha de la página, ¡sólo por cortesía! -->
+<address>Creada el 13 de febrero de 2017<br>
+  por Oscar Alva y Gary Ulloa.</address>
+
+</body>
+</html>
