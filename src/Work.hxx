@@ -24,7 +24,7 @@ public:
 		}
 		
 		 const int isbn() const{
-            return 0;
+            return -1;
         }
 };
 
