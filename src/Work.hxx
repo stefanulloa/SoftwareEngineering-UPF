@@ -32,6 +32,10 @@ public:
         void isbn( const int &isbn) {
 			_isbn = isbn;
 		}
+		
+		const std::string originalFile() const {
+			return "Hola";
+		}
 };
 
 #endif

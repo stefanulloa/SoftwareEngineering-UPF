@@ -10,7 +10,7 @@ public:
 		TEST_CASE( testTitle_addingTitle );
 		TEST_CASE( testReference_byDefault )
 		TEST_CASE( testReference_addingReference )
-//		TEST_CASE( testOriginal_byDefault );
+		TEST_CASE( testOriginal_byDefault );
 //		TEST_CASE( testOriginal_addingOriginal );
 //		TEST_CASE( testAText_byDefault );
 //		TEST_CASE( testAText_initialized );
@@ -37,12 +37,12 @@ public:
 		work.isbn( 1 );
 		ASSERT_EQUALS( 1, work.isbn() );
 	}
-	/*void testOriginal_byDefault()
+	void testOriginal_byDefault()
 	{
 		Work work;
 		ASSERT_EQUALS( "", work.originalFile() );
 	}
-	void testOriginal_addingOriginal()
+	/*void testOriginal_addingOriginal()
 	{
 		Work work;
 		work.originalFile( "AFile.odt" );
