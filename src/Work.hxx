@@ -30,7 +30,7 @@ public:
         }
         
         void isbn( const int &isbn) {
-			
+			_isbn = isbn;
 		}
 };
 
