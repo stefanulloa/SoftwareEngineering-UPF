@@ -9,7 +9,7 @@ public:
 		TEST_CASE( testTitle_byDefault );
 		TEST_CASE( testTitle_addingTitle );
 		TEST_CASE( testReference_byDefault )
-//		TEST_CASE( testReference_addingReference )
+		TEST_CASE( testReference_addingReference )
 //		TEST_CASE( testOriginal_byDefault );
 //		TEST_CASE( testOriginal_addingOriginal );
 //		TEST_CASE( testAText_byDefault );
@@ -31,13 +31,13 @@ public:
 		Work work;
 		ASSERT_EQUALS( -1, work.isbn() );
 	}
-	/*void testReference_addingReference()
+	void testReference_addingReference()
 	{
 		Work work;
 		work.isbn( 1 );
 		ASSERT_EQUALS( 1, work.isbn() );
 	}
-	void testOriginal_byDefault()
+	/*void testOriginal_byDefault()
 	{
 		Work work;
 		ASSERT_EQUALS( "", work.originalFile() );

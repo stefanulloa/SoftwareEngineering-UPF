@@ -2,15 +2,17 @@
 #define _WORK_HXX_
 
 //si aqui se pone "using namespace std", ya no hara falta poner std en el resto de sitios
-using namespace std;
+
 
 class Work {
 
 private: std::string _title;
-
+		 int _isbn;
+			
 public:
 	Work() //metodo constructor, mismo nombre de la clase
-		: _title ("-- Untitled --") // manera de declarar valor para no hacerlo dos veces
+		: _title ("-- Untitled --"), // manera de declarar valor para no hacerlo dos veces
+		 _isbn (-1)
 	{
 				//si se inicializase aqui, como en java, haria trabajo doble
 	} 
@@ -24,8 +26,12 @@ public:
 		}
 		
 		 const int isbn() const{
-            return -1;
+            return _isbn;
         }
+        
+        void isbn( const int &isbn) {
+			
+		}
 };
 
 #endif
