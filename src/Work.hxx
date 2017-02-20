@@ -34,7 +34,7 @@ public:
 		}
 		
 		const std::string originalFile() const {
-			return "Hola";
+			return "";
 		}
 };
 
