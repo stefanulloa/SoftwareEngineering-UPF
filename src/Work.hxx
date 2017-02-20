@@ -2,6 +2,7 @@
 #define _WORK_HXX_
 
 //si aqui se pone "using namespace std", ya no hara falta poner std en el resto de sitios
+using namespace std;
 
 class Work {
 
@@ -21,6 +22,10 @@ public:
 		void title( const std::string &title) {
 			_title = title;
 		}
+		
+		 const int isbn() const{
+            return 0;
+        }
 };
 
 #endif
