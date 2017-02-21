@@ -29,7 +29,7 @@ public:
 		_isPublished = true;
 	}
 	void withdraw() {
-		
+		_isPublished = false;
 	}
 };
 
