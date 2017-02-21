@@ -6,7 +6,7 @@ class Collection{
 public:
 
 	const std::string title() const {
-		return "hola";
+		return "-- Untitled --";
 	}
 };
 
