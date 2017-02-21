@@ -3,18 +3,19 @@
 
 //si aqui se pone "using namespace std", ya no hara falta poner std en el resto de sitios
 
-
 class Work {
 
 private: std::string _title;
 		 int _isbn;
 		 std::string _originalFile;
+		 std::string _aText;
 			
 public:
 	Work() //metodo constructor, mismo nombre de la clase
 		: _title ("-- Untitled --"), // manera de declarar valor para no hacerlo dos veces
 		 _isbn (-1),
 		 _originalFile ("")
+		 
 	{
 				//si se inicializase aqui, como en java, haria trabajo doble
 	} 
@@ -41,6 +42,14 @@ public:
 		
 		void originalFile( const std::string &originalFile) {
 			_originalFile = originalFile;
+		}
+		
+		const std::string aText() {
+			std::stringstream ss;
+			ss << "hola"; 
+			std::cout << ss.str() << std::endl; //comprobación del valor de ss
+			_aText = ss.str();
+			return _aText;
 		}
 };
 
