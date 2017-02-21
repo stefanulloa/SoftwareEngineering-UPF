@@ -8,11 +8,13 @@ class Work {
 
 private: std::string _title;
 		 int _isbn;
+		 std::string _originalFile;
 			
 public:
 	Work() //metodo constructor, mismo nombre de la clase
 		: _title ("-- Untitled --"), // manera de declarar valor para no hacerlo dos veces
-		 _isbn (-1)
+		 _isbn (-1),
+		 _originalFile ("")
 	{
 				//si se inicializase aqui, como en java, haria trabajo doble
 	} 
@@ -34,7 +36,11 @@ public:
 		}
 		
 		const std::string originalFile() const {
-			return "";
+			return _originalFile;
+		}
+		
+		void originalFile( const std::string &originalFile) {
+			
 		}
 };
 

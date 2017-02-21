@@ -11,7 +11,7 @@ public:
 		TEST_CASE( testReference_byDefault )
 		TEST_CASE( testReference_addingReference )
 		TEST_CASE( testOriginal_byDefault );
-//		TEST_CASE( testOriginal_addingOriginal );
+		TEST_CASE( testOriginal_addingOriginal );
 //		TEST_CASE( testAText_byDefault );
 //		TEST_CASE( testAText_initialized );
 	}
@@ -42,13 +42,13 @@ public:
 		Work work;
 		ASSERT_EQUALS( "", work.originalFile() );
 	}
-	/*void testOriginal_addingOriginal()
+	void testOriginal_addingOriginal()
 	{
 		Work work;
 		work.originalFile( "AFile.odt" );
 		ASSERT_EQUALS( "AFile.odt", work.originalFile() );
 	}
-	void testAText_byDefault()
+	/*void testAText_byDefault()
 	{
 		Work work;
 		ASSERT_EQUALS( "-1, '-- Untitled --', ''", work.aText() );
