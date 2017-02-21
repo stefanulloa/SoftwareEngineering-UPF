@@ -40,7 +40,7 @@ public:
 		}
 		
 		void originalFile( const std::string &originalFile) {
-			
+			_originalFile = originalFile;
 		}
 };
 
