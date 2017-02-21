@@ -23,7 +23,7 @@ public:
 		}
 	
 	bool isPublished(){
-		
+		return _isPublished;
 	}
 };
 
