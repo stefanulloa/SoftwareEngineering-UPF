@@ -46,7 +46,7 @@ public:
 		
 		const std::string aText() {
 			std::stringstream ss;
-			ss << "hola"; 
+			ss << _isbn << ", " << "'" << _title << "'" << ", " << "'" << _originalFile << "'"; 
 			std::cout << ss.str() << std::endl; //comprobación del valor de ss
 			_aText = ss.str();
 			return _aText;
