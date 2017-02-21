@@ -58,7 +58,7 @@ public:
 		Work work;
 		work.title( "A Work" );
 		work.isbn( 100 );
-		work.originalFile( "AFile.odt" );
+		work.originalFile( "originals/AFile.odt" );
 		ASSERT_EQUALS( "100, 'A Work', 'originals/AFile.odt'", work.aText() );
 	}
 

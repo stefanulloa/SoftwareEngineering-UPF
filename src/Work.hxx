@@ -1,8 +1,6 @@
 #ifndef _WORK_HXX_
 #define _WORK_HXX_
 
-//si aqui se pone "using namespace std", ya no hara falta poner std en el resto de sitios
-
 class Work {
 
 private: std::string _title;
@@ -11,17 +9,17 @@ private: std::string _title;
 		 std::string _aText;
 			
 public:
-	Work() //metodo constructor, mismo nombre de la clase
-		: _title ("-- Untitled --"), // manera de declarar valor para no hacerlo dos veces
+	Work() 
+		: _title ("-- Untitled --"),
 		 _isbn (-1),
 		 _originalFile (""),
 		 _aText("-1, '-- Untitled --', ''")
 		 
 	{
-				//si se inicializase aqui, como en java, haria trabajo doble
+				
 	} 
 
-		const std::string title() const { //si se pone const quiere decir que desde fuera no se puede cambiar el valor 
+		const std::string title() const {  
 			return _title;
 		}
 		
