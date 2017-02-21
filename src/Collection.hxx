@@ -17,7 +17,7 @@ public:
 	}
 	
 	void title( const std::string &title) {
-			
+			_title = title;
 		}
 };
 
