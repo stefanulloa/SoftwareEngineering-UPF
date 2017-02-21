@@ -25,6 +25,9 @@ public:
 	bool isPublished(){
 		return _isPublished;
 	}
+	void publish() {
+		
+	}
 };
 
 #endif
