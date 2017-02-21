@@ -7,7 +7,7 @@ public:
 	
 	
 	const std::string getName() const {
-		return "Antonio";
+		return "Pedro";
 	}	
 	
 };
