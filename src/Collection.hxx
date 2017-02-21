@@ -28,6 +28,9 @@ public:
 	void publish() {
 		_isPublished = true;
 	}
+	void withdraw() {
+		
+	}
 };
 
 #endif

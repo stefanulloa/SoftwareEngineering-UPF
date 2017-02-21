@@ -10,7 +10,7 @@ public:
 		TEST_CASE( testTitle_addingTitle );
 		TEST_CASE( testPublished_byDefault );
 		TEST_CASE( testPublished_afterPublishing );
-//		TEST_CASE( testPublished_afterWithdrawing );
+		TEST_CASE( testPublished_afterWithdrawing );
 	}
 	void testTitle_byDefault()
 	{
@@ -34,14 +34,14 @@ public:
 		collection.publish();
 		ASSERT_EQUALS( true, collection.isPublished() );
 	}
-	/*void testPublished_afterWithdrawing()
+	void testPublished_afterWithdrawing()
 	{
 		Collection collection;
 		collection.publish();
 		collection.withdraw();
 		ASSERT_EQUALS( false, collection.isPublished() );
 	}
-*/
+
 };
 
 REGISTER_FIXTURE( CollectionTests )
