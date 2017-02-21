@@ -4,10 +4,12 @@
 class Collection{
 
 private: std::string _title;
+			bool _isPublished;
 
 public:
 	Collection()
-	:_title ("-- Untitled --")
+	:_title ("-- Untitled --"),
+	_isPublished (false)
 	
 	{
 	}
@@ -19,6 +21,10 @@ public:
 	void title( const std::string &title) {
 			_title = title;
 		}
+	
+	bool isPublished(){
+		
+	}
 };
 
 #endif
