@@ -3,11 +3,22 @@
 
 class Collection{
 
-public:
+private: std::string _title;
 
-	const std::string title() const {
-		return "-- Untitled --";
+public:
+	Collection()
+	:_title ("-- Untitled --")
+	
+	{
 	}
+	
+	const std::string title() const {
+		return _title;
+	}
+	
+	void title( const std::string &title) {
+			
+		}
 };
 
 #endif
