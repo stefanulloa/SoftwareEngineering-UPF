@@ -14,7 +14,8 @@ public:
 	Work() //metodo constructor, mismo nombre de la clase
 		: _title ("-- Untitled --"), // manera de declarar valor para no hacerlo dos veces
 		 _isbn (-1),
-		 _originalFile ("")
+		 _originalFile (""),
+		 _aText("-1, '-- Untitled --', ''")
 		 
 	{
 				//si se inicializase aqui, como en java, haria trabajo doble
@@ -47,10 +48,9 @@ public:
 		const std::string aText() {
 			std::stringstream ss;
 			ss << _isbn << ", " << "'" << _title << "'" << ", " << "'" << _originalFile << "'"; 
-			std::cout << ss.str() << std::endl; //comprobación del valor de ss
-			_aText = ss.str();
-			return _aText;
+			return ss.str();;
 		}
+		
 };
 
 #endif
