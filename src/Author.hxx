@@ -24,6 +24,9 @@ public:
 	void hire() {
 		_isEmployed = true;
 	}
+	void fire() {
+		
+	}
 	
 };
 

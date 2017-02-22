@@ -10,6 +10,7 @@ public:
 		TEST_CASE( testName_addingName );
 		TEST_CASE( testEmployed_byDefault );
 		TEST_CASE( testEmployed_afterHiring );
+		TEST_CASE( testEmployed_afterFiring );
 	
 	}
 	void testName_byDefault()
@@ -33,6 +34,13 @@ public:
 		Author author;
 		author.hire();
 		ASSERT_EQUALS( true, author.isEmployed() );
+	}
+	void testEmployed_afterFiring()
+	{
+		Author author;
+		author.hire();
+		author.fire();
+		ASSERT_EQUALS( false, author.isEmployed() );
 	}
 
 	
