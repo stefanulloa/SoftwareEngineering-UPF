@@ -22,7 +22,7 @@ public:
 		return _isEmployed;
 	}
 	void hire() {
-		
+		_isEmployed = true;
 	}
 	
 };
