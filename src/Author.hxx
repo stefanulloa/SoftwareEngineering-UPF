@@ -4,11 +4,13 @@
 class Author{
 	private: std::string _name;
 				bool _isEmployed;
+			std::string _oneWork;
 
 public:
 	Author()
 	:_name ("Pedro"),
-	_isEmployed (false)
+	_isEmployed (false),
+	_oneWork ("")
 	{
 	}
 		
@@ -26,6 +28,9 @@ public:
 	}
 	void fire() {
 		_isEmployed = false;
+	}
+	const std::string catalogue() const{
+		return "red";
 	}
 	
 };

@@ -1,11 +1,12 @@
 #include "MiniCppUnit.hxx"
+#include "Author.hxx"
 
 class AddAuthorAndWorkTests : public TestFixture<AddAuthorAndWorkTests>
 {
 public:
 	TEST_FIXTURE( AddAuthorAndWorkTests )
 	{
-//		TEST_CASE( testCatalogue_withoutWorks );
+		TEST_CASE( testCatalogue_withoutWorks );
 //		TEST_CASE( testCatalogue_withOneWork );
 //		TEST_CASE( testCatalogue_withTwoWorks );
 //		TEST_CASE( testFindWork_withTwoWorks );
@@ -16,7 +17,7 @@ public:
 //		TEST_CASE( testWorkList_withOneWork );
 //		TEST_CASE( testWorkList_withTwoWorks );
 	}
-/*	void testCatalogue_withoutWorks()
+	void testCatalogue_withoutWorks()
 	{
 		Author author;
 		
@@ -25,7 +26,7 @@ public:
 			author.catalogue()
 		)
 	}
-	void testCatalogue_withOneWork()
+	/*void testCatalogue_withOneWork()
 	{
 		Author author;
 		author.addWork( "A work", 123, "aFile.odt" );
