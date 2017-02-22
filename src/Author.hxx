@@ -3,10 +3,12 @@
 
 class Author{
 	private: std::string _name;
+				bool _isEmployed;
 
 public:
 	Author()
-	:_name ("Pedro")
+	:_name ("Pedro"),
+	_isEmployed (false)
 	{
 	}
 		
@@ -17,7 +19,10 @@ public:
 	_name = name;
 	}
 	bool isEmployed(){
-		return false;
+		return _isEmployed;
+	}
+	void hire() {
+		
 	}
 	
 };
