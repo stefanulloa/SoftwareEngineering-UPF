@@ -25,7 +25,7 @@ public:
 		_isEmployed = true;
 	}
 	void fire() {
-		
+		_isEmployed = false;
 	}
 	
 };
