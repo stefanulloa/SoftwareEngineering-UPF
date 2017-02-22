@@ -14,7 +14,7 @@ public:
 		return _name;
 	}	
 	void setName(const std::string &name){
-	
+	_name = name;
 	}
 	
 };
