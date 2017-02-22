@@ -30,7 +30,7 @@ public:
 		_isEmployed = false;
 	}
 	const std::string catalogue() const{
-		return "red";
+		return _oneWork;
 	}
 	
 };
