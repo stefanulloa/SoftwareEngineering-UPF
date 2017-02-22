@@ -17,7 +17,7 @@ public:
 	_name = name;
 	}
 	bool isEmployed(){
-		return true;
+		return false;
 	}
 	
 };
