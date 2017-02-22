@@ -8,6 +8,7 @@ public:
 	{
 		TEST_CASE( testName_byDefault );
 		TEST_CASE( testName_addingName );
+		TEST_CASE( testEmployed_byDefault );
 	
 	}
 	void testName_byDefault()
@@ -20,6 +21,11 @@ public:
 		Author author;
 		author.setName("Antonio");
 		ASSERT_EQUALS( "Antonio", author.getName() );
+	}
+	void testEmployed_byDefault()
+	{
+		Author author;
+		ASSERT_EQUALS( false, author.isEmployed() );
 	}
 
 	

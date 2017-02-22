@@ -16,6 +16,9 @@ public:
 	void setName(const std::string &name){
 	_name = name;
 	}
+	bool isEmployed(){
+		return true;
+	}
 	
 };
 
