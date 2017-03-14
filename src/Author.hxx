@@ -48,7 +48,7 @@ public:
     }
     Work & findWork(const std::string &title){
 		for(WorkList::iterator it = _catalogue.begin(); it != _catalogue.end(); it++){
-            if("hola" == title){
+            if((*it)->title() == title){
 			return *(*it);
 			}
         }
