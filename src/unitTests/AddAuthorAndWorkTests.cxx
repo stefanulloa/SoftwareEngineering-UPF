@@ -7,7 +7,7 @@ public:
 	TEST_FIXTURE( AddAuthorAndWorkTests )
 	{
 		TEST_CASE( testCatalogue_withoutWorks );
-//		TEST_CASE( testCatalogue_withOneWork );
+		TEST_CASE( testCatalogue_withOneWork );
 //		TEST_CASE( testCatalogue_withTwoWorks );
 //		TEST_CASE( testFindWork_withTwoWorks );
 //		TEST_CASE( testFindWork_withInexistentWork );
@@ -26,7 +26,7 @@ public:
 			author.catalogue()
 		)
 	}
-	/*void testCatalogue_withOneWork()
+	void testCatalogue_withOneWork()
 	{
 		Author author;
 		author.addWork( "A work", 123, "aFile.odt" );
@@ -36,7 +36,7 @@ public:
 			author.catalogue()
 		)
 	}
-	void testCatalogue_withTwoWorks()
+	/*void testCatalogue_withTwoWorks()
 	{
 		Author author;
 		author.addWork( "A work", 111, "aFile.odt" );

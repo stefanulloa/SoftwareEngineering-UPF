@@ -8,7 +8,7 @@ class Author{
 
 public:
 	Author()
-	:_name ("Pedro"),
+	:_name ("-- Unnamed --"),
 	_isEmployed (false),
 	_oneWork ("")
 	{
@@ -31,6 +31,9 @@ public:
 	}
 	const std::string catalogue() const{
 		return _oneWork;
+	}
+	void addWork(const std::string &title, const int &isbn, const std::string &originalFile){
+		
 	}
 	
 };
