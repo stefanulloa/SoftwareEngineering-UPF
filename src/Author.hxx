@@ -38,7 +38,7 @@ public:
         std::stringstream aw;
         for(WorkList::iterator it = _catalogue.begin(); it != _catalogue.end(); it++){
             aw << "\t" << (it)->isbn()<< ", " << "'" << (it)->title() << "'" << ", " << "'" << "originals/" << (it)->originalFile() << "'" << "\n";
-            a += aw.str();
+            a = aw.str();
         }
             return a;
     }
