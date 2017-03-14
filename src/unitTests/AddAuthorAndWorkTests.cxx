@@ -8,7 +8,7 @@ public:
 	{
 		TEST_CASE( testCatalogue_withoutWorks );
 		TEST_CASE( testCatalogue_withOneWork );
-//		TEST_CASE( testCatalogue_withTwoWorks );
+		TEST_CASE( testCatalogue_withTwoWorks );
 //		TEST_CASE( testFindWork_withTwoWorks );
 //		TEST_CASE( testFindWork_withInexistentWork );
 //		TEST_CASE( testDescription_withoutWorks );
@@ -36,7 +36,7 @@ public:
 			author.catalogue()
 		)
 	}
-	/*void testCatalogue_withTwoWorks()
+	void testCatalogue_withTwoWorks()
 	{
 		Author author;
 		author.addWork( "A work", 111, "aFile.odt" );
@@ -48,7 +48,7 @@ public:
 			author.catalogue()
 		)
 	}
-	void testFindWork_withTwoWorks()
+	/*void testFindWork_withTwoWorks()
 	{
 		Author author;
 		author.addWork( "A work", 111, "aFile.odt" );
