@@ -19,6 +19,16 @@ public:
 				
 	} 
 
+	Work(const std::string &title, const int &isbn, const std::string &originalFile) 
+		: _title (title),
+		 _isbn (isbn),
+		 _originalFile (originalFile),
+		 _aText("")
+		 
+	{
+	
+	}
+		 
 		const std::string title() const {  
 			return _title;
 		}

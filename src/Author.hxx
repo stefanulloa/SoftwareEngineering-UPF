@@ -2,7 +2,7 @@
 #define _AUTHOR_HXX_
 #include "Work.hxx"
 
-typedef std::list<Work> WorkList;
+typedef std::list<Work*> WorkList;
 
 class Author{
 	private: std::string _name;
@@ -37,18 +37,22 @@ public:
         std::string a;
         std::stringstream aw;
         for(WorkList::iterator it = _catalogue.begin(); it != _catalogue.end(); it++){
-            aw << "\t" << (it)->isbn()<< ", " << "'" << (it)->title() << "'" << ", " << "'" << "originals/" << (it)->originalFile() << "'" << "\n";
+            aw << "\t" << (*it)->isbn()<< ", " << "'" << (*it)->title() << "'" << ", " << "'" << "originals/" << (*it)->originalFile() << "'" << "\n";
             a = aw.str();
         }
             return a;
     }
 	void addWork(const std::string &title, const int &isbn, const std::string &originalFile){
-        Work obra;
-        obra.title(title);
-        obra.isbn(isbn);
-        obra.originalFile(originalFile);
+        Work *obra = new Work(title, isbn, originalFile);
         _catalogue.push_back(obra);
     }
+    Work & findWork(const std::string &title){
+		for(WorkList::iterator it = _catalogue.begin(); it != _catalogue.end(); it++){
+            if("hola" == title){
+			return *(*it);
+			}
+        }
+	}
 	
 };
 
