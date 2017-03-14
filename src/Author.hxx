@@ -33,7 +33,9 @@ public:
 		return _oneWork;
 	}
 	void addWork(const std::string &title, const int &isbn, const std::string &originalFile){
-		
+		std::stringstream aw;
+			aw << "\t" << isbn<< ", " << "'" << title << "'" << ", " << "'" << "originals/" << originalFile << "'" << "\n"; 
+			_oneWork = aw.str();
 	}
 	
 };
