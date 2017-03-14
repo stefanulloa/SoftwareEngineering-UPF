@@ -17,6 +17,17 @@ public:
 	_oneWork ("")
 	{
 	}
+	
+	~Author(){
+		
+		WorkList::iterator ib = _catalogue.begin();
+		while(ib != _catalogue.end()){
+			Work *pEl = (*ib);
+			delete pEl;
+			ib++;
+		}
+
+	}
 		
 	const std::string getName() const {
 		return _name;
