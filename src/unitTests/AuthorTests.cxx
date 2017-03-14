@@ -16,7 +16,7 @@ public:
 	void testName_byDefault()
 	{
 		Author author;
-		ASSERT_EQUALS( "Pedro", author.getName() );
+		ASSERT_EQUALS( "-- Unnamed --", author.getName() );
 	}
 	void testName_addingName()
 	{
