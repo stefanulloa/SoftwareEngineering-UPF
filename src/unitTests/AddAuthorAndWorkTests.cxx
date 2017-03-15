@@ -16,7 +16,7 @@ public:
 		TEST_CASE( testDescription_withWorks );
 		TEST_CASE( testWorkList_withoutWorks );
 		TEST_CASE( testWorkList_withOneWork );
-//		TEST_CASE( testWorkList_withTwoWorks );
+		TEST_CASE( testWorkList_withTwoWorks );
 	}
 	void testCatalogue_withoutWorks()
 	{
@@ -129,7 +129,7 @@ public:
 			collection.workList()
 		)
 	}
-	/*void testWorkList_withTwoWorks()
+	void testWorkList_withTwoWorks()
 	{
 		Author author;
 		author.addWork( "A work", 111, "aFile.odt" );
@@ -147,7 +147,7 @@ public:
 			collection.workList()
 		)
 	}
-*/
+
 };
 
 REGISTER_FIXTURE( AddAuthorAndWorkTests )
