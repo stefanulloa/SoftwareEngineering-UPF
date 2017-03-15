@@ -1,5 +1,6 @@
 #include "MiniCppUnit.hxx"
 #include "Author.hxx"
+#include "Collection.hxx"
 
 class AddAuthorAndWorkTests : public TestFixture<AddAuthorAndWorkTests>
 {
@@ -13,7 +14,7 @@ public:
 		TEST_CASE( testFindWork_withInexistentWork );
 		TEST_CASE( testDescription_withoutWorks );
 		TEST_CASE( testDescription_withWorks );
-//		TEST_CASE( testWorkList_withoutWorks );
+		TEST_CASE( testWorkList_withoutWorks );
 //		TEST_CASE( testWorkList_withOneWork );
 //		TEST_CASE( testWorkList_withTwoWorks );
 	}
@@ -104,7 +105,7 @@ public:
 			author.description()
 		)
 	}
-	/*void testWorkList_withoutWorks()
+	void testWorkList_withoutWorks()
 	{
 		Collection collection;
 		
@@ -113,7 +114,7 @@ public:
 			collection.workList()
 		)
 	}
-	void testWorkList_withOneWork()
+	/*void testWorkList_withOneWork()
 	{
 		Author author;
 		author.addWork( "A work", 111, "aFile.odt" );

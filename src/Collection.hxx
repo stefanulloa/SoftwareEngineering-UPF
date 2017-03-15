@@ -31,6 +31,10 @@ public:
 	void withdraw() {
 		_isPublished = false;
 	}
+	const std::string workList() const {
+		return "red";
+	}
+	
 };
 
 #endif
