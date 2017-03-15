@@ -27,7 +27,7 @@ class MeltingPotOnline{
 			for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
             a = (*it)->name();
             if (!(*it)->isEmployed()){
-			a += "";
+			a += " [external]\n";
 			}
         }
             return a;
