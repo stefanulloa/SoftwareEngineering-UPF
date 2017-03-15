@@ -68,7 +68,7 @@ public:
 	}
 	const std::string description(){
 		std::string a = this->name();
-        std::string b = a + "";
+        std::string b = a + " [external]\n";
         return b;
 	}
 	
