@@ -39,7 +39,7 @@ public:
 	bool isEmployed(){
 		return _isEmployed;
 	}
-	void hire() {
+	void contract() {
 		_isEmployed = true;
 	}
 	void fire() {
@@ -68,8 +68,16 @@ public:
 	}
 	const std::string description(){
 		std::string a = this->name();
+		if(!this->isEmployed()){
         std::string b = a + " [external]\n";
+        b = b + catalogue();
         return b;
+		}
+        else{
+		std::string b = a + " \n";
+		b = b + catalogue();
+		return b;
+		}	
 	}
 	
 };

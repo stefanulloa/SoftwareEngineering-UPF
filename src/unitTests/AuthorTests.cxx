@@ -32,13 +32,13 @@ public:
 	void testEmployed_afterHiring()
 	{
 		Author author;
-		author.hire();
+		author.contract();
 		ASSERT_EQUALS( true, author.isEmployed() );
 	}
 	void testEmployed_afterFiring()
 	{
 		Author author;
-		author.hire();
+		author.contract();
 		author.fire();
 		ASSERT_EQUALS( false, author.isEmployed() );
 	}
