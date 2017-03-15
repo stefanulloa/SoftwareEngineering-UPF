@@ -8,7 +8,7 @@ class MeltingPotOnline{
 		{
 		}
 		const std::string catalogue() {
-		return "red";
+		return "";
 		}
 
 };
