@@ -16,13 +16,13 @@ public:
 	void testName_byDefault()
 	{
 		Author author;
-		ASSERT_EQUALS( "-- Unnamed --", author.getName() );
+		ASSERT_EQUALS( "-- Unnamed --", author.name() );
 	}
 	void testName_addingName()
 	{
 		Author author;
-		author.setName("Antonio");
-		ASSERT_EQUALS( "Antonio", author.getName() );
+		author.name("Antonio");
+		ASSERT_EQUALS( "Antonio", author.name() );
 	}
 	void testEmployed_byDefault()
 	{

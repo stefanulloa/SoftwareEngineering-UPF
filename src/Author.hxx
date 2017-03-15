@@ -30,10 +30,10 @@ public:
 
 	}
 		
-	const std::string getName() const {
+	const std::string name() const {
 		return _name;
 	}	
-	void setName(const std::string &name){
+	void name(const std::string &name){
 	_name = name;
 	}
 	bool isEmployed(){
@@ -65,6 +65,11 @@ public:
 			}
         }
         throw Exception();
+	}
+	const std::string description(){
+		std::string a = this->name();
+        std::string b = a + "";
+        return b;
 	}
 	
 };
