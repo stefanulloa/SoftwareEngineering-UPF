@@ -19,6 +19,12 @@ public:
 	{
 	}
 	
+	Author(const std::string &title, const bool &isEmployed)
+	:_name (title),
+	_isEmployed (isEmployed)
+	{
+	}
+	
 	~Author(){
 		
 		WorkList::iterator ib = _catalogue.begin();
