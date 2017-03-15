@@ -74,7 +74,7 @@ public:
         return b;
 		}
         else{
-		std::string b = a + " \n";
+		std::string b = a + " [contracted]\n";
 		b = b + catalogue();
 		return b;
 		}	
