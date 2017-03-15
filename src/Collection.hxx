@@ -32,7 +32,7 @@ public:
 		_isPublished = false;
 	}
 	const std::string workList() const {
-		return "red";
+		return "";
 	}
 	
 };
