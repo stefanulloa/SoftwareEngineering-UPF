@@ -40,7 +40,7 @@ public:
         std::stringstream aw;
         int cont = 1;
         for(WorkList::iterator it = _workList.begin(); it != _workList.end(); it++, cont++){
-            aw << 1 << ": " << (*it)->isbn()<< ", " << "'" << (*it)->title() << "'" << ", " << "'" << "originals/" << (*it)->originalFile() << "'" << "\n";
+            aw << cont << ": " << (*it)->isbn()<< ", " << "'" << (*it)->title() << "'" << ", " << "'" << "originals/" << (*it)->originalFile() << "'" << "\n";
             a = aw.str();
         }
             return a;
