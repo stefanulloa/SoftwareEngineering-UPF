@@ -1,6 +1,7 @@
 #ifndef _AUTHOR_HXX_
 #define _AUTHOR_HXX_
 #include "Work.hxx"
+#include "Exception.hxx"
 
 typedef std::list<Work*> WorkList;
 
@@ -63,6 +64,7 @@ public:
 			return *(*it);
 			}
         }
+        throw Exception();
 	}
 	
 };
