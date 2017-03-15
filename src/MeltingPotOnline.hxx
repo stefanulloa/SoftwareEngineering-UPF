@@ -25,7 +25,7 @@ class MeltingPotOnline{
 		const std::string catalogue() {
 			std::string a;
 			for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
-            a = (*it)->name();
+            a += (*it)->name();
             if (!(*it)->isEmployed()){
 			a += " [external]\n";
 			}
