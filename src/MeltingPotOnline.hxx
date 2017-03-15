@@ -29,6 +29,9 @@ class MeltingPotOnline{
             if (!(*it)->isEmployed()){
 			a += " [external]\n";
 			}
+			else{
+			a += " [contracted]\n";
+			}
         }
             return a;
 		}
