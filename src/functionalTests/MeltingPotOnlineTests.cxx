@@ -1,13 +1,14 @@
 #include "LibFileSystem.hxx"
 #include "MiniCppUnit.hxx"
 #include <fstream>
+#include "MeltingPotOnline.hxx"
 
 class MeltingPotOnlineTests : public TestFixture<MeltingPotOnlineTests>
 {
 public:
 	TEST_FIXTURE( MeltingPotOnlineTests )
 	{
-		//TEST_CASE( testCatalogue_withoutAuthors );
+		TEST_CASE( testCatalogue_withoutAuthors );
 		//TEST_CASE( testCatalogue_withExternalAuthor );
 		//TEST_CASE( testCatalogue_withContractedAuthor );
 		//TEST_CASE( testCatalogue_withTwoAuthors );
@@ -43,7 +44,7 @@ public:
 		os.close();
 	}
 
-	/*
+	
 	void testCatalogue_withoutAuthors()
 	{
 		MeltingPotOnline business;
@@ -53,7 +54,7 @@ public:
 			business.catalogue()
 		);
 	}
-	void testCatalogue_withExternalAuthor()
+	/*void testCatalogue_withExternalAuthor()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An external author", false );
