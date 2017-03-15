@@ -12,7 +12,7 @@ class Exception: public exception
 	}
 	virtual const char* what() const throw()
 	{		
-		return "";
+		return "The work does not exist";
 	}
 
 };
