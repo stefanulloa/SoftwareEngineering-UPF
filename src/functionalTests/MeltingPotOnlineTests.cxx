@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testCatalogue_withTwoAuthors );
 		TEST_CASE( testCatalogue_withWork );
 		TEST_CASE( testCatalogue_withTwoWorksBySameAuthor );
-		//TEST_CASE( testCatalogue_withManyWorks );
+		TEST_CASE( testCatalogue_withManyWorks );
 		//TEST_CASE( testAddWork_withInexistentAuthor );
 		//TEST_CASE( testAddWork_withInexistentOriginal );
 	}
@@ -115,7 +115,7 @@ public:
 			business.catalogue()
 		);
 	}
-	/*void testCatalogue_withManyWorks()
+	void testCatalogue_withManyWorks()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );
@@ -137,7 +137,7 @@ public:
 			business.catalogue()
 		);
 	}
-	void testAddWork_withInexistentAuthor()
+	/*void testAddWork_withInexistentAuthor()
 	{
 		MeltingPotOnline business;
 		createOriginalFile( "aFile.odt" );
