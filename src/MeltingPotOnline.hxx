@@ -33,6 +33,7 @@ class MeltingPotOnline{
 			else{
 			a += " [contracted]\n";
 			}
+			a += (*it)->catalogue();
         }
             return a;
 		}
