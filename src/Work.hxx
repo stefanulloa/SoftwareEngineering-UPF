@@ -3,7 +3,8 @@
 
 class Work {
 
-private: std::string _title;
+private: std::string _author;
+		 std::string _title;
 		 int _isbn;
 		 std::string _originalFile;
 		 std::string _aText;
@@ -28,6 +29,25 @@ public:
 	{
 	
 	}
+	
+	Work(const std::string &author, const std::string &title, const int &isbn, const std::string &originalFile) 
+		: _author(author),
+		 _title (title),
+		 _isbn (isbn),
+		 _originalFile (originalFile),
+		 _aText("")
+		 
+	{
+	
+	}
+		 
+		const std::string author() const {  
+			return _author;
+		}
+		
+		void author( const std::string &author) {
+			_author = author;
+		}
 		 
 		const std::string title() const {  
 			return _title;

@@ -12,7 +12,7 @@ public:
 		TEST_CASE( testCatalogue_withExternalAuthor );
 		TEST_CASE( testCatalogue_withContractedAuthor );
 		TEST_CASE( testCatalogue_withTwoAuthors );
-		//TEST_CASE( testCatalogue_withWork );
+		TEST_CASE( testCatalogue_withWork );
 		//TEST_CASE( testCatalogue_withTwoWorksBySameAuthor );
 		//TEST_CASE( testCatalogue_withManyWorks );
 		//TEST_CASE( testAddWork_withInexistentAuthor );
@@ -86,7 +86,7 @@ public:
 			business.catalogue()
 		);
 	}
-	/*void testCatalogue_withWork()
+	void testCatalogue_withWork()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );
@@ -99,7 +99,7 @@ public:
 			business.catalogue()
 		);
 	}
-	void testCatalogue_withTwoWorksBySameAuthor()
+	/*void testCatalogue_withTwoWorksBySameAuthor()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );

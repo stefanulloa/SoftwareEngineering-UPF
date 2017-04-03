@@ -1,6 +1,7 @@
 #ifndef _MELTINGPOTONLINE_HXX_
 #define _MELTINGPOTONLINE_HXX_
 #include "Author.hxx"
+#include "Work.hxx"
 
 typedef std::list<Author*> AuthorList;
 
@@ -38,6 +39,13 @@ class MeltingPotOnline{
 		void addAuthor(const std::string &title, bool isEmployed){
 			Author *autor = new Author(title, isEmployed);
 			_escritores.push_back(autor);
+		}
+		void addWork(const std::string &author, const std::string &title, const int &isbn, const std::string &originalFile){
+			for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
+				if((*it)->name()==author){
+					(*it)->addWork(title, isbn, originalFile);
+				}
+			}
 		}
 
 };
