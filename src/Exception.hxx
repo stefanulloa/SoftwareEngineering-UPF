@@ -25,7 +25,7 @@ class exceptionInexistentAuthor: public exception
 	}
 	virtual const char* what() const throw()
 	{		
-		return "red";
+		return "The author does not exist";
 	}
 
 };
