@@ -4,15 +4,28 @@
 #include <exception>
 using namespace std;
 
-class Exception: public exception
+class exceptionInexistentWork: public exception
 {
 	public:
-	 Exception()
+	 exceptionInexistentWork()
 	{
 	}
 	virtual const char* what() const throw()
 	{		
 		return "The work does not exist";
+	}
+
+};
+
+class exceptionInexistentAuthor: public exception
+{
+	public:
+	 exceptionInexistentAuthor()
+	{
+	}
+	virtual const char* what() const throw()
+	{		
+		return "red";
 	}
 
 };

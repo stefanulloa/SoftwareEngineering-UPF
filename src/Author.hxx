@@ -70,7 +70,7 @@ public:
 			return *(*it);
 			}
         }
-        throw Exception();
+        throw exceptionInexistentWork();
 	}
 	const std::string description(){
 		std::string a = this->name();

@@ -2,6 +2,7 @@
 #define _MELTINGPOTONLINE_HXX_
 #include "Author.hxx"
 #include "Work.hxx"
+#include "Exception.hxx"
 
 typedef std::list<Author*> AuthorList;
 
@@ -45,8 +46,10 @@ class MeltingPotOnline{
 			for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
 				if((*it)->name()==author){
 					(*it)->addWork(title, isbn, originalFile);
+					return;
 				}
 			}
+			throw exceptionInexistentAuthor();
 		}
 
 };
