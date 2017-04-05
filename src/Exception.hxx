@@ -30,4 +30,17 @@ class exceptionInexistentAuthor: public exception
 
 };
 
+class exceptionInexistentOriginalFile: public exception
+{
+	public:
+	 exceptionInexistentOriginalFile()
+	{
+	}
+	virtual const char* what() const throw()
+	{		
+		return "red";
+	}
+
+};
+
 #endif

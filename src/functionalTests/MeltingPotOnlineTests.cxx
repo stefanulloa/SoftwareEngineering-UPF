@@ -16,7 +16,7 @@ public:
 		TEST_CASE( testCatalogue_withTwoWorksBySameAuthor );
 		TEST_CASE( testCatalogue_withManyWorks );
 		TEST_CASE( testAddWork_withInexistentAuthor );
-		//TEST_CASE( testAddWork_withInexistentOriginal );
+		TEST_CASE( testAddWork_withInexistentOriginal );
 	}
 	/**
 	 * The setUp method is automatically called before each test
@@ -155,7 +155,7 @@ public:
 			)
 		}
 	}
-	/*void testAddWork_withInexistentOriginal()
+	void testAddWork_withInexistentOriginal()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );
@@ -173,7 +173,6 @@ public:
 			)
 		}
 	}
-	*/
 };
 
 REGISTER_FIXTURE( MeltingPotOnlineTests )
