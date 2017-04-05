@@ -38,7 +38,7 @@ class exceptionInexistentOriginalFile: public exception
 	}
 	virtual const char* what() const throw()
 	{		
-		return "red";
+		return "The original file does not exist";
 	}
 
 };
