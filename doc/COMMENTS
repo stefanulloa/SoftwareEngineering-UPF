@@ -1,0 +1,34 @@
+Seminar 1:
+- En el ejercicio de clase, los servicios no acaban de estar explicados en el glosario
+- El index.html debería colgar directamente de doc/
+- Faltan stakeholders importantes (layout designer, editor)
+- Faltan obscure points y se podría plantear alternativas (soluciones) a las preguntas planteadas.
+- Faltan por describir servicios en el glosario
+
+Seminar 2:
+- Documento final:
+   · Debería estar en index.html colgando de doc/
+   · Stakeholders implicados son incorrectos en ambos casos
+   · No hay diagrama de casos de uso, ni ejercicio 3
+   · Support actors incorrectos en ambos casos de uso. Actor primario en comprar libro solo puede ser cliente. Para comprar un libro faltan pasos entre el 3 y 4 (seleccionar libro?). 
+   
+Seminar 3:
+- Falta un index.html que cuelgue de doc/
+- Faltan stakeholders como layout designer y una generalización de usuarios, así como relacionar pedidos y servicios de mensajería
+- Se podría haber encontrado algun requerimiento de texto más
+
+Seminar 4:
+- Ejercicio de clase, los requerimientos no funcionales deberian estar clasificados por conceptos
+- index.html debe colgar de doc/
+- El estado "Revisado" se queda colgado en el diagrama (no puede llegar a un estado terminal)
+- En el final, falta por clasificar los requerimientos
+
+Seminar 5:
+- En el ejercicio de clase, las relaciones de Cliente, Author y Collection hacia Work estan al revés
+- index.html debería colgar de doc/
+- La imagen se podría ver mejor
+- MeltingPot debería gestionar la memoria de Collection
+- Los métodos search deberían devolver variables como Author*, Work*,...
+- Las cardinalidades son incorrectas
+- Relación Author <-> Work es incorrecta
+- Los atributos estan mal expresados (una forma correcta seria, Works: list< Work* > )
