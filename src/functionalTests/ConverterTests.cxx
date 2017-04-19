@@ -1,13 +1,14 @@
 #include <fstream>
 #include "LibFileSystem.hxx"
 #include "MiniCppUnit.hxx"
+#include "MeltingPotOnline.hxx"
 
 class ConverterTests : public TestFixture<ConverterTests>
 {
 public:
 	TEST_FIXTURE( ConverterTests )
 	{
-		//TEST_CASE( testConvertersByDefault_withoutOriginals );
+		TEST_CASE( testConvertersByDefault_withoutOriginals );
 		//TEST_CASE( testConvertersByDefault_withOneOriginal );
 		//TEST_CASE( testOptionalConverterWithFile_withOneOriginal );
 	}
@@ -41,7 +42,7 @@ public:
 		os << "An original file" << std::endl;
 		os.close();
 	}
-	/*
+	
 	void testConvertersByDefault_withoutOriginals()
 	{
 		MeltingPotOnline business;
@@ -52,7 +53,7 @@ public:
 			LibFileSystem::listDirectoryInOrder( "generated" )
 		);
 	}
-	void testConvertersByDefault_withOneOriginal()
+	/*void testConvertersByDefault_withOneOriginal()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );

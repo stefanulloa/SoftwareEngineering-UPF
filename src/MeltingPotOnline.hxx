@@ -42,19 +42,25 @@ class MeltingPotOnline{
 			Author *autor = new Author(title, isEmployed);
 			_escritores.push_back(autor);
 		}
+		
+		Author& findAuthor(const std::string &author){
+			for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
+				if((*it)->name()==author){
+					return *(*it);
+				}
+			} 
+		throw exceptionInexistentAuthor();
+		}
+		
 		void addWork(const std::string &author, const std::string &title, const int &isbn, const std::string &originalFile){
 			
-			bool existeFile = false; 
 			std::string fileName = "originals/" + originalFile;
 			std::ifstream file (fileName.c_str());
 			
-			for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
-				if((*it)->name()==author){
-					(*it)->addWork(title, isbn, originalFile);
-					existeFile = true;
-				}
-			}
-			if (existeFile == false) throw exceptionInexistentAuthor();
+			Author *autorEncontrado = &findAuthor(author);
+
+			autorEncontrado->addWork(title, isbn, originalFile);
+	
 			if (file == 0) throw exceptionInexistentOriginalFile();
 			
 		}
