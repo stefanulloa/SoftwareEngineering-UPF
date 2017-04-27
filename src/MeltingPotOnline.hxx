@@ -71,7 +71,8 @@ class MeltingPotOnline{
 				0 //  This  zero  i s  needed  to  stop  the  loop
 			};
 			
-			
+			for ( int i = 0; fakeGenerated[i]; i++ )
+				std::ofstream newfile( fakeGenerated[i] );
 		}
 
 };
