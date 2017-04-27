@@ -9,7 +9,7 @@ public:
 	TEST_FIXTURE( ConverterTests )
 	{
 		TEST_CASE( testConvertersByDefault_withoutOriginals );
-		//TEST_CASE( testConvertersByDefault_withOneOriginal );
+		TEST_CASE( testConvertersByDefault_withOneOriginal );
 		//TEST_CASE( testOptionalConverterWithFile_withOneOriginal );
 	}
 
@@ -53,7 +53,7 @@ public:
 			LibFileSystem::listDirectoryInOrder( "generated" )
 		);
 	}
-	/*void testConvertersByDefault_withOneOriginal()
+	void testConvertersByDefault_withOneOriginal()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );
@@ -67,7 +67,7 @@ public:
 			LibFileSystem::listDirectoryInOrder( "generated" )
 		);
 	}
-	void testOptionalConverterWithFile_withOneOriginal()
+	/*void testOptionalConverterWithFile_withOneOriginal()
 	{
 		std::ofstream config( "config/config.txt" );
 		config << "pdf_mark\n";

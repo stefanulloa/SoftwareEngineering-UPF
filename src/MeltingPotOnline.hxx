@@ -11,8 +11,8 @@ class MeltingPotOnline{
 	
 	public:
 		MeltingPotOnline()
-		{
-		}
+		{	
+		} 
 		
 		~MeltingPotOnline(){
 		
@@ -63,6 +63,14 @@ class MeltingPotOnline{
 			autorEncontrado->addWork(title, isbn, originalFile);
 	
 			if (file == 0) throw exceptionInexistentOriginalFile();
+			
+			const char * fakeGenerated [] = {
+				"generated/An author - A work [multiple HTML files].war",
+				"generated/An author - A work [printable].pdf",
+				"generated/An author - A work [watermark].pdf",
+				0 //  This  zero  i s  needed  to  stop  the  loop
+			};
+			
 			
 		}
 
