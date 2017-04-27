@@ -41,6 +41,8 @@ class MeltingPotOnline{
 		void addAuthor(const std::string &title, bool isEmployed){
 			Author *autor = new Author(title, isEmployed);
 			_escritores.push_back(autor);
+			
+		std::ofstream file_red ("generated/test.txt");
 		}
 		
 		Author& findAuthor(const std::string &author){

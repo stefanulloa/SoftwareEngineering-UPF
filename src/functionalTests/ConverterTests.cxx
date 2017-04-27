@@ -41,7 +41,7 @@ public:
 		std::ofstream os( fullname.c_str() );
 		os << "An original file" << std::endl;
 		os.close();
-	}
+	} 
 	
 	void testConvertersByDefault_withoutOriginals()
 	{
