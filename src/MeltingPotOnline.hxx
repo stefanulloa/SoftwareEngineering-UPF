@@ -53,6 +53,24 @@ class MeltingPotOnline{
 		throw exceptionInexistentAuthor();
 		}
 		
+		void generatedConversions(const std::string &author, const std::string &title){
+		
+		std::string commonSuffix = "generated/" + author + " - " + title;
+			
+			const char * fakeGenerated [] = {
+				
+				(commonSuffix + " [multiple HTML files].war").c_str(),
+				(commonSuffix + " [printable].pdf").c_str(),
+				(commonSuffix + " [watermark].pdf").c_str(),
+				
+				0 //  This  zero  i s  needed  to  stop  the  loop
+			};
+			
+			for ( int i = 0; fakeGenerated[i]; i++ )
+				std::ofstream newfile( fakeGenerated[i] );
+		
+		} 
+		
 		void addWork(const std::string &author, const std::string &title, const int &isbn, const std::string &originalFile){
 			
 			std::string fileName = "originals/" + originalFile;
@@ -64,15 +82,8 @@ class MeltingPotOnline{
 	
 			if (file == 0) throw exceptionInexistentOriginalFile();
 			
-			const char * fakeGenerated [] = {
-				"generated/An author - A work [multiple HTML files].war",
-				"generated/An author - A work [printable].pdf",
-				"generated/An author - A work [watermark].pdf",
-				0 //  This  zero  i s  needed  to  stop  the  loop
-			};
+			generatedConversions(author, title);
 			
-			for ( int i = 0; fakeGenerated[i]; i++ )
-				std::ofstream newfile( fakeGenerated[i] );
 		}
 
 };
