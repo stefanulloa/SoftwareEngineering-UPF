@@ -10,7 +10,7 @@ class HtmlConverter{
 		
 		void convert(const std::string &originalFileName, const std::string &generatedFileName) {
 			
-			std::string convertedName = "generated/Prefix [multiple HTML files].war";
+			std::string convertedName = generatedFileName + " [multiple HTML files].war";
 			
 			std::ofstream generatedFile( convertedName.c_str() );
 			
