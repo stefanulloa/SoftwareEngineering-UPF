@@ -55,13 +55,13 @@ class MeltingPotOnline{
 		
 		void generatedConversions(const std::string &author, const std::string &title){
 		
-		std::string commonSuffix = "generated/" + author + " - " + title;
+		std::string commonPrefix = "generated/" + author + " - " + title;
 			
 			const char * fakeGenerated [] = {
 				
-				(commonSuffix + " [multiple HTML files].war").c_str(),
-				(commonSuffix + " [printable].pdf").c_str(),
-				(commonSuffix + " [watermark].pdf").c_str(),
+				(commonPrefix + " [multiple HTML files].war").c_str(),
+				(commonPrefix + " [printable].pdf").c_str(),
+				(commonPrefix + " [watermark].pdf").c_str(),
 				
 				0 //  This  zero  i s  needed  to  stop  the  loop
 			};
@@ -82,7 +82,7 @@ class MeltingPotOnline{
 	
 			if (file == 0) throw exceptionInexistentOriginalFile();
 			
-			generatedConversions(author, title);
+			generatedConversions(author, title); 
 			
 		}
 
