@@ -82,7 +82,7 @@ class MeltingPotOnline{
 	
 			if (file == 0) throw exceptionInexistentOriginalFile();
 			
-			generatedConversions(author, title); 
+			generatedConversions(author, title);
 			
 		}
 

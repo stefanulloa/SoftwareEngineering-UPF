@@ -9,6 +9,7 @@ public:
 	TEST_FIXTURE( HtmlConverterTests )
 	{
 		TEST_CASE( testConvert_generateFile );
+		TEST_CASE( testConvert_generateContent );
 	}
 
 	/**
@@ -50,6 +51,18 @@ public:
 		ASSERT_EQUALS(
 			"generated/Prefix [multiple HTML files].war\n", 
 			LibFileSystem::listDirectoryInOrder( "generated" ) 
+		);
+	}
+	
+	void testConvert_generateContent()
+	{
+		HtmlConverter converter;
+		createOriginalFile( "Original.odt" );
+		converter.convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"War file generated from 'originals/Original.odt'\n", 
+			LibFileSystem::fileContent( "generated/Prefix [multiple HTML files].war" ) 
 		);
 	}
 	
