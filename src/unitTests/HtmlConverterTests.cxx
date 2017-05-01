@@ -10,6 +10,7 @@ public:
 	{
 		TEST_CASE( testConvert_generateFile );
 		TEST_CASE( testConvert_generateContent );
+		TEST_CASE( testConvert_withInexistentOriginal );
 	}
 
 	/**
@@ -64,6 +65,24 @@ public:
 			"War file generated from 'originals/Original.odt'\n", 
 			LibFileSystem::fileContent( "generated/Prefix [multiple HTML files].war" ) 
 		);
+	}
+	
+	void testConvert_withInexistentOriginal()
+	{
+		HtmlConverter converter;
+
+		try
+		{
+			converter.convert( "originals/Original.odt", "generated/Prefix" );
+			FAIL( "An exception should be caught!" );		
+		}
+		catch ( std::exception & e )
+		{
+			ASSERT_EQUALS(
+				"The original file does not exist",
+				e.what()
+			)
+		}
 	}
 	
 };

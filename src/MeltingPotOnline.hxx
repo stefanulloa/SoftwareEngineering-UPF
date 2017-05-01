@@ -74,13 +74,13 @@ class MeltingPotOnline{
 		void addWork(const std::string &author, const std::string &title, const int &isbn, const std::string &originalFile){
 			
 			std::string fileName = "originals/" + originalFile;
-			std::ifstream file (fileName.c_str());
+			std::ifstream file (fileName);
 			
 			Author *autorEncontrado = &findAuthor(author);
 
 			autorEncontrado->addWork(title, isbn, originalFile);
 	
-			if (file == 0) throw exceptionInexistentOriginalFile();
+			if (!file) throw exceptionInexistentOriginalFile();
 			
 			generatedConversions(author, title);
 			
