@@ -51,7 +51,7 @@ class exceptionHtmlConversionInexistentOriginalFile: public exception
 	}
 	virtual const char* what() const throw()
 	{		
-		return "The original file does not exist red";
+		return "The original file does not exist";
 	}
 
 };

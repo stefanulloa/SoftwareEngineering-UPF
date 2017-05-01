@@ -74,7 +74,7 @@ class MeltingPotOnline{
 		void addWork(const std::string &author, const std::string &title, const int &isbn, const std::string &originalFile){
 			
 			std::string fileName = "originals/" + originalFile;
-			std::ifstream file (fileName);
+			std::ifstream file (fileName.c_str());
 			
 			Author *autorEncontrado = &findAuthor(author);
 
