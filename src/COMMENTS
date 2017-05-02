@@ -1,0 +1,18 @@
+Lab 1:
+- El fichero answers.txt debería estar en la carpeta doc/
+- Algunos commits deberían estar mejor comentados (relacionados con questions)
+- Se podría haber mejorado la presentación del resultado de recintos
+- Preguntas incompletas y/o con errores de GIT: Q6, Q7, Q10
+Lab 2:
+- Faltan REFACTOR commits
+- Falta especificar el fichero sobre el cual estáis haciendo el commit (siempre ponéis ItemTest cuando era el ejemplo de la práctica; deberían ir nombres como AuthorTest)
+- Los test no se deberían modificar
+Lab 3:
+- Faltan REFACTOR commits y la classe ItemTests no existe (era solo un ejemplo)
+- Se podría haber puesto un mejor nombre a la clase Exception (uno que informara sobre lo que es esa excepción en concreto)
+- Por lo demás práctica perfecta
+Lab 4:
+- MeltingPotOnline tambien debería gestionar Collections
+- ItemTest no es ninguna clase para hacer commit
+- Faltan REFACTOR commits
+- Por lo demás perfecta
