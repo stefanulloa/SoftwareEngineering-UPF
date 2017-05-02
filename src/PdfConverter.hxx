@@ -16,7 +16,7 @@ class PdfConverter {
 		
 		void convert(const std::string &originalFileName, const std::string &generatedFileName) {
 			
-			std::string convertedName = generatedFileName + " [printable].pdf red";
+			std::string convertedName = generatedFileName + " [printable].pdf";
 			LibreOfficeTools::convertToPdf(
 			originalFileName, convertedName, watermarkString = "");
 	
