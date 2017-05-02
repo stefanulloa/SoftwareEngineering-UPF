@@ -2,8 +2,9 @@
 #define _HTMLCONVERTER_HXX_
 #include "libLibreOffice2Html.hxx"
 #include "Exception.hxx"
+#include "Converter.hxx"
 
-class HtmlConverter{
+class HtmlConverter : public Converter {
 	
 	public:
 		HtmlConverter()

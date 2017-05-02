@@ -2,6 +2,7 @@
 #include "LibFileSystem.hxx"
 #include "MiniCppUnit.hxx"
 #include "HtmlConverter.hxx"
+#include "Converter.hxx"
 
 class HtmlConverterTests : public TestFixture<HtmlConverterTests>
 {
@@ -11,6 +12,7 @@ public:
 		TEST_CASE( testConvert_generateFile );
 		TEST_CASE( testConvert_generateContent );
 		TEST_CASE( testConvert_withInexistentOriginal );
+		TEST_CASE( testConvert_polymorphicCall );
 	}
 
 	/**
@@ -83,6 +85,21 @@ public:
 				e.what()
 			)
 		}
+	}
+
+	void testConvert_polymorphicCall()
+	{
+		Converter *converter = new Converter;
+		HtmlConverter * htmlConverter = dynamic_cast< HtmlConverter* > ( converter );
+		createOriginalFile( "Original.odt" );
+		htmlConverter->convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"War file generated from 'originals/Original.odt'\n", 
+			LibFileSystem::fileContent( "generated/Prefix [multiple HTML files].war" ) 
+		);
+
+		delete converter;
 	}
 	
 };
