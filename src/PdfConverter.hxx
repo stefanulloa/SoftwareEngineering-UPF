@@ -25,7 +25,7 @@ class PdfConverter {
 			else {
 			convertedName = generatedFileName + " [watermark].pdf";
 			}
-			LibreOfficeTools::convertToPdf(originalFileName, convertedName, _watermarkString="red");
+			LibreOfficeTools::convertToPdf(originalFileName, convertedName, _watermarkString);
 	
 		}	
 		
