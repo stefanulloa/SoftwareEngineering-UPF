@@ -12,6 +12,7 @@ public:
 		TEST_CASE( testPdfPrintableConvert_generateFile );
 		TEST_CASE( testPdfWatermarkConvert_generateFile );
 		TEST_CASE( testPdfPrintableConvert_generateContent );
+		TEST_CASE( testPdfWatermarkConvert_generateContent );
 	}
 
 	/**
@@ -78,6 +79,19 @@ public:
 		ASSERT_EQUALS(
 			"PDF generated from 'originals/Original.odt'. Watermark: ''\n", 
 			LibFileSystem::fileContent( "generated/Prefix [printable].pdf" ) 
+		);
+	}
+
+	void testPdfWatermarkConvert_generateContent()
+	{
+		PdfConverter converter;
+		converter.activeWatermark("Any Watermark");
+		createOriginalFile( "Original.odt" );
+		converter.convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"PDF generated from 'originals/Original.odt'. Watermark: 'Any Watermark'\n", 
+			LibFileSystem::fileContent( "generated/Prefix [watermark].pdf" ) 
 		);
 	}
 	
