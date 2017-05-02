@@ -7,20 +7,31 @@
 class PdfConverter {
 	
 	private: 
-		std::string watermarkString;
+		std::string _watermarkString;
 		
 	public:
 		PdfConverter()
+		:_watermarkString("")
 		{	
 		} 
 		
 		void convert(const std::string &originalFileName, const std::string &generatedFileName) {
 			
-			std::string convertedName = generatedFileName + " [printable].pdf";
-			LibreOfficeTools::convertToPdf(
-			originalFileName, convertedName, watermarkString = "");
+			std::string convertedName;
+			
+			if (_watermarkString == ""){
+			convertedName = generatedFileName + " [printable].pdf";
+			}
+			else {
+			convertedName = generatedFileName + " [watermark red].pdf";
+			}
+			LibreOfficeTools::convertToPdf(originalFileName, convertedName, _watermarkString);
 	
-		}		
+		}	
+		
+		void activeWatermark(const std::string &any){
+			_watermarkString = any;
+		};	
 
 };
 

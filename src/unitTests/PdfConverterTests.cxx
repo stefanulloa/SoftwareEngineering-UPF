@@ -10,6 +10,7 @@ public:
 	TEST_FIXTURE( PdfConverterTests )
 	{
 		TEST_CASE( testPdfPrintableConvert_generateFile );
+		TEST_CASE( testPdfWatermarkConvert_generateFile );
 		
 	}
 
@@ -51,6 +52,19 @@ public:
 
 		ASSERT_EQUALS(
 			"generated/Prefix [printable].pdf\n", 
+			LibFileSystem::listDirectoryInOrder( "generated" ) 
+		);
+	}
+	
+	void testPdfWatermarkConvert_generateFile()
+	{
+		PdfConverter converter;
+		converter.activeWatermark("Any Watermark");
+		createOriginalFile( "Original.odt" );
+		converter.convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"generated/Prefix [watermark].pdf\n", 
 			LibFileSystem::listDirectoryInOrder( "generated" ) 
 		);
 	}
