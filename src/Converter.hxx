@@ -11,7 +11,9 @@ class Converter {
 
 		virtual ~Converter()
 		{
-		}		
+		}	
+		
+		virtual void convert(const std::string &originalFileName, const std::string &generatedFileName) = 0;
 
 };
 

@@ -89,17 +89,16 @@ public:
 
 	void testConvert_polymorphicCall()
 	{
-		Converter *converter = new Converter;
-		HtmlConverter * htmlConverter = dynamic_cast< HtmlConverter* > ( converter );
+		HtmlConverter html;
+		Converter * converter = &html;
 		createOriginalFile( "Original.odt" );
-		htmlConverter->convert( "originals/Original.odt", "generated/Prefix" );
+		converter->convert( "originals/Original.odt", "generated/Prefix" );
 
 		ASSERT_EQUALS(
 			"War file generated from 'originals/Original.odt'\n", 
 			LibFileSystem::fileContent( "generated/Prefix [multiple HTML files].war" ) 
-		);
-
-		delete converter;
+		)
+		
 	}
 	
 };

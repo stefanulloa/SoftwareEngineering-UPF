@@ -16,7 +16,7 @@ class HtmlConverter : public Converter {
 			std::string convertedName = generatedFileName + " [multiple HTML files].war";
 			if (OO_WarGeneration( originalFileName.c_str(), convertedName.c_str() ) != 0)
 				throw exceptionHtmlConversionInexistentOriginalFile();
-		
+	
 		}		
 
 };
