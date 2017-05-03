@@ -2,13 +2,14 @@
 #include "MailStub.hxx"
 #include "MiniCppUnit.hxx"
 #include <fstream>
+#include "MeltingPotOnline.hxx"
 
 class SubscriptionTests : public TestFixture<SubscriptionTests>
 {
 public:
 	TEST_FIXTURE( SubscriptionTests )
 	{
-		//TEST_CASE( testListTopics_withOneTopic );
+		TEST_CASE( testListTopics_withOneTopic );
 		//TEST_CASE( testListTopics_withTwoTopics );
 		//TEST_CASE( testAssociateTopicWithWork_withInexistentTopic );
 		//TEST_CASE( testAssociateTopicWithWork_workWithTwoTopics );
@@ -52,7 +53,6 @@ public:
 		os.close();
 	}
 
-	/*
 	void testListTopics_withOneTopic()
 	{
 		MeltingPotOnline business;
@@ -62,7 +62,7 @@ public:
 			business.listTopics()
 		);
 	}
-	void testListTopics_withTwoTopics()
+	/*void testListTopics_withTwoTopics()
 	{
 		MeltingPotOnline business;
 		business.addTopic( "Literature" );

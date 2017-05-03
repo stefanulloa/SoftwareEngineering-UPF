@@ -4,12 +4,15 @@
 #include "Work.hxx"
 #include "Exception.hxx"
 #include "ConverterGroup.hxx"
+#include "Topic.hxx"
 
 typedef std::list<Author*> AuthorList;
+//typedef std::list<Topic*> TopicList;
 
 class MeltingPotOnline{
 	private: AuthorList _escritores;
 			 ConverterGroup _converters;
+			 Topic _topic;
 			
 	
 	public:
@@ -46,8 +49,7 @@ class MeltingPotOnline{
 		}
 		void addAuthor(const std::string &title, bool isEmployed){
 			Author *autor = new Author(title, isEmployed);
-			_escritores.push_back(autor);
-			
+			_escritores.push_back(autor);		
 		}
 		
 		Author& findAuthor(const std::string &author){
@@ -92,6 +94,14 @@ class MeltingPotOnline{
 			
 			_converters.convert(fileName.c_str(), commonPrefix.c_str());
 			
+		}
+		
+		void addTopic(const std::string &topic){
+			_topic.theme(topic);
+		}
+		
+		const std::string listTopics(){
+			return _topic.theme();
 		}
 
 };
