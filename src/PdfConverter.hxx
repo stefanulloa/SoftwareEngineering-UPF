@@ -29,7 +29,7 @@ class PdfConverter : public Converter {
 			LibreOfficeTools::convertToPdf(originalFileName, convertedName, _watermarkString);
 			}
 			catch ( ... ){
-				//throw exceptionInexistentOriginalFile();
+				throw exceptionInexistentOriginalFile();
 			}
 		}	
 		
