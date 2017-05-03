@@ -7,12 +7,12 @@
 #include "Topic.hxx"
 
 typedef std::list<Author*> AuthorList;
-//typedef std::list<Topic*> TopicList;
+typedef std::list<Topic*> TopicList;
 
 class MeltingPotOnline{
 	private: AuthorList _escritores;
 			 ConverterGroup _converters;
-			 Topic _topic;
+			 TopicList _topicos;
 			
 	
 	public:
@@ -30,6 +30,13 @@ class MeltingPotOnline{
 			Author *pEliminarAutor = (*ib);
 			delete pEliminarAutor;
 			ib++;
+		}
+		
+		TopicList::iterator it = _topicos.begin();
+		while(it != _topicos.end()){
+			Topic *pEliminarTopic = (*it);
+			delete pEliminarTopic;
+			it++;
 		}
 
 		}
@@ -96,12 +103,19 @@ class MeltingPotOnline{
 			
 		}
 		
-		void addTopic(const std::string &topic){
-			_topic.theme(topic);
+		void addTopic(const std::string &theme){
+			Topic * topic = new Topic(theme);
+			_topicos.push_back(topic);
 		}
 		
 		const std::string listTopics(){
-			return _topic.theme();
+			std::string tops;
+			//for(TopicList::iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
+				TopicList::iterator ito = _topicos.begin();
+				tops += (*ito)->theme();
+				tops += "\n";
+			//}
+			return tops;
 		}
 
 };

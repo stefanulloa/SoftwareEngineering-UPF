@@ -10,7 +10,7 @@ public:
 	TEST_FIXTURE( SubscriptionTests )
 	{
 		TEST_CASE( testListTopics_withOneTopic );
-		//TEST_CASE( testListTopics_withTwoTopics );
+		TEST_CASE( testListTopics_withTwoTopics );
 		//TEST_CASE( testAssociateTopicWithWork_withInexistentTopic );
 		//TEST_CASE( testAssociateTopicWithWork_workWithTwoTopics );
 		//TEST_CASE( testListClients_withOneClient );
@@ -62,7 +62,7 @@ public:
 			business.listTopics()
 		);
 	}
-	/*void testListTopics_withTwoTopics()
+	void testListTopics_withTwoTopics()
 	{
 		MeltingPotOnline business;
 		business.addTopic( "Literature" );
@@ -73,7 +73,7 @@ public:
 			business.listTopics()
 		);
 	}
-	void testAssociateTopicWithWork_withInexistentTopic()
+	/*void testAssociateTopicWithWork_withInexistentTopic()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );

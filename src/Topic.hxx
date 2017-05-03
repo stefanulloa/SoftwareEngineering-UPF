@@ -9,8 +9,12 @@ public:
 	Topic() 
 		: _theme ("")
 		 
-	{
-				
+	{				
+	} 
+	
+	Topic(const std::string &theme) 
+		: _theme(theme)
+	{	
 	} 
  
 		const std::string theme() {  
@@ -18,7 +22,7 @@ public:
 		}
 		
 		void theme( const std::string &theme) {
-			_theme = theme + "\n";
+			_theme = theme;
 		}
 		
 };
