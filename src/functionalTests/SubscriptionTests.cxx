@@ -11,7 +11,7 @@ public:
 	{
 		TEST_CASE( testListTopics_withOneTopic );
 		TEST_CASE( testListTopics_withTwoTopics );
-		//TEST_CASE( testAssociateTopicWithWork_withInexistentTopic );
+		TEST_CASE( testAssociateTopicWithWork_withInexistentTopic );
 		//TEST_CASE( testAssociateTopicWithWork_workWithTwoTopics );
 		//TEST_CASE( testListClients_withOneClient );
 		//TEST_CASE( testListClients_withTwoClients );
@@ -73,7 +73,7 @@ public:
 			business.listTopics()
 		);
 	}
-	/*void testAssociateTopicWithWork_withInexistentTopic()
+	void testAssociateTopicWithWork_withInexistentTopic()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );
@@ -92,7 +92,7 @@ public:
 			)
 		}
 	}
-	void testAssociateTopicWithWork_workWithTwoTopics()
+	/*void testAssociateTopicWithWork_workWithTwoTopics()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );

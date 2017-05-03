@@ -68,4 +68,17 @@ class exceptionUnsupportedFormat: public exception
 	}
 
 };
+
+class exceptionInexistentTopic: public exception
+{
+	public:
+	 exceptionInexistentTopic()
+	{
+	}
+	virtual const char* what() const throw()
+	{		
+		return "The topic does not exist";
+	}
+
+};
 #endif

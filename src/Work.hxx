@@ -1,5 +1,9 @@
 #ifndef _WORK_HXX_
 #define _WORK_HXX_
+#include "Topic.hxx"
+#include "Exception.hxx"
+
+typedef std::list<Topic*> TopicList;
 
 class Work {
 
@@ -8,6 +12,7 @@ private: std::string _author;
 		 int _isbn;
 		 std::string _originalFile;
 		 std::string _aText;
+		 TopicList _topics;
 			
 public:
 	Work() 
