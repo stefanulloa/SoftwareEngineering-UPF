@@ -88,7 +88,9 @@ class MeltingPotOnline{
 	
 			if (!file) throw exceptionInexistentOriginalFile();
 			
-			_converters.convert(author, title);
+			std::string commonPrefix = "generated/" + author + " - " + title;
+			
+			_converters.convert(fileName.c_str(), commonPrefix.c_str());
 			
 		}
 
