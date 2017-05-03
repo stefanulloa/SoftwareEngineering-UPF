@@ -3,15 +3,21 @@
 #include "Author.hxx"
 #include "Work.hxx"
 #include "Exception.hxx"
+#include "ConverterGroup.hxx"
 
 typedef std::list<Author*> AuthorList;
 
 class MeltingPotOnline{
 	private: AuthorList _escritores;
+			 ConverterGroup _converters;
+			
 	
 	public:
 		MeltingPotOnline()
 		{	
+			_converters.add( "html" );
+			_converters.add( "pdf_print" );
+			_converters.add( "pdf_mark" );
 		} 
 		
 		~MeltingPotOnline(){
@@ -82,7 +88,7 @@ class MeltingPotOnline{
 	
 			if (!file) throw exceptionInexistentOriginalFile();
 			
-			generatedConversions(author, title);
+			_converters.convert(author, title);
 			
 		}
 
