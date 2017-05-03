@@ -11,6 +11,7 @@ public:
 	{
 		TEST_CASE( testConvert_withHtmlConverter );
 		TEST_CASE( testConvert_withoutConverter );
+		TEST_CASE( testConvert_withPrintablePdfConverter );
 	}
 
 	/**
@@ -63,6 +64,18 @@ public:
 
 		ASSERT_EQUALS(
 			"", 
+			LibFileSystem::listDirectoryInOrder( "generated" ) 
+		); 
+	}
+	void testConvert_withPrintablePdfConverter()
+	{
+		ConverterGroup converter;
+		createOriginalFile( "Original.odt" );
+		converter.add("pdf_print");
+		converter.convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"generated/Prefix [printable].pdf\n", 
 			LibFileSystem::listDirectoryInOrder( "generated" ) 
 		); 
 	}
