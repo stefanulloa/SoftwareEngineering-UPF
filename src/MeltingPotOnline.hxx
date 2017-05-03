@@ -110,11 +110,10 @@ class MeltingPotOnline{
 		
 		const std::string listTopics(){
 			std::string tops;
-			//for(TopicList::iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
-				TopicList::iterator ito = _topicos.begin();
+			for(TopicList::iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
 				tops += (*ito)->theme();
 				tops += "\n";
-			//}
+			}
 			return tops;
 		}
 
