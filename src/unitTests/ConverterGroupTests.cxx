@@ -13,6 +13,7 @@ public:
 		TEST_CASE( testConvert_withHtmlConverter );
 		TEST_CASE( testConvert_withoutConverter );
 		TEST_CASE( testConvert_withPrintablePdfConverter );
+		TEST_CASE( testConvert_withWatermarkPdfConverter );
 		TEST_CASE( testConvert_withHtmlAndPdfConverter );
 		TEST_CASE( testConvert_withUnknownConverter );
 	}
