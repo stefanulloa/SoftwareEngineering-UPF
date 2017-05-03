@@ -3,6 +3,7 @@
 #include "Converter.hxx"
 #include "HtmlConverter.hxx"
 #include "PdfConverter.hxx"
+#include "Exception.hxx"
 
 class ConverterGroup {
 	
@@ -46,6 +47,9 @@ class ConverterGroup {
 				Converter * pdfPrintableConvert = new PdfConverter;
 				pdfPrintableConvert->activeWatermark("any_string");
 				_converterGroup.push_back(pdfPrintableConvert);
+			}
+			if(!(type == "html" || type == "pdf_print" || type == "pdf_mark")){
+				throw exceptionUnsupportedFormat();
 			}
 		};
 		

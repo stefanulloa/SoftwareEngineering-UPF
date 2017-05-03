@@ -55,4 +55,17 @@ class exceptionHtmlConversionInexistentOriginalFile: public exception
 	}
 
 };
+
+class exceptionUnsupportedFormat: public exception
+{
+	public:
+	 exceptionUnsupportedFormat()
+	{
+	}
+	virtual const char* what() const throw()
+	{		
+		return "Unsupported format red";
+	}
+
+};
 #endif

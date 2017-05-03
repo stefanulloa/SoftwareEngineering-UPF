@@ -3,6 +3,7 @@
 #include "MiniCppUnit.hxx"
 #include "Converter.hxx"
 #include "ConverterGroup.hxx"
+#include "Exception.hxx"
 
 class ConverterGroupTests : public TestFixture<ConverterGroupTests>
 {
@@ -13,6 +14,7 @@ public:
 		TEST_CASE( testConvert_withoutConverter );
 		TEST_CASE( testConvert_withPrintablePdfConverter );
 		TEST_CASE( testConvert_withHtmlAndPdfConverter );
+		TEST_CASE( testConvert_withUnknownConverter );
 	}
 
 	/**
@@ -104,6 +106,25 @@ public:
 			"generated/Prefix [multiple HTML files].war\ngenerated/Prefix [printable].pdf\n", 
 			LibFileSystem::listDirectoryInOrder( "generated" ) 
 		);
+	}
+	void testConvert_withUnknownConverter()
+	{
+		
+		ConverterGroup converters;
+
+
+		try
+		{
+			converters.add("doc");
+			FAIL( "An exception should be caught!" );		
+		}
+		catch ( std::exception & e)
+		{
+			ASSERT_EQUALS(
+				"Unsupported format",
+				e.what()
+			)
+		}
 	}
 	
 };
