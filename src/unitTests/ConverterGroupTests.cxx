@@ -12,6 +12,7 @@ public:
 		TEST_CASE( testConvert_withHtmlConverter );
 		TEST_CASE( testConvert_withoutConverter );
 		TEST_CASE( testConvert_withPrintablePdfConverter );
+		TEST_CASE( testConvert_withWatermarkPdfConverter );
 	}
 
 	/**
@@ -76,6 +77,18 @@ public:
 
 		ASSERT_EQUALS(
 			"generated/Prefix [printable].pdf\n", 
+			LibFileSystem::listDirectoryInOrder( "generated" ) 
+		); 
+	}
+	void testConvert_withWatermarkPdfConverter()
+	{
+		ConverterGroup converter;
+		createOriginalFile( "Original.odt" );
+		converter.add("pdf_mark");
+		converter.convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"generated/Prefix [watermark].pdf\n", 
 			LibFileSystem::listDirectoryInOrder( "generated" ) 
 		); 
 	}

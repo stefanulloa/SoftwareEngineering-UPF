@@ -24,7 +24,6 @@ class ConverterGroup {
 			if(!_converterGroup.empty()){
 				
 				Converter * converter = _converterGroup.front();
-				//_converterGroup.push_back(converter);
 				converter->convert(originalFileName, generatedFileName);
 			
 			}else{}
@@ -37,6 +36,10 @@ class ConverterGroup {
 				_converterGroup.push_back(htmlConvert);
 			}
 			if(type == "pdf_print"){
+				Converter * pdfPrintableConvert = new PdfConverter;
+				_converterGroup.push_back(pdfPrintableConvert);
+			}
+			if(type == "pdf_mark"){
 				Converter * pdfPrintableConvert = new PdfConverter;
 				_converterGroup.push_back(pdfPrintableConvert);
 			}
