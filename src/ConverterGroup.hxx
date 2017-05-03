@@ -7,7 +7,7 @@
 class ConverterGroup {
 	
 	protected:
-	std::list<HtmlConverter*> _converterGroup;
+	std::list<Converter*> _converterGroup;
 	
 	public:
 		ConverterGroup():_converterGroup(0)
@@ -22,16 +22,23 @@ class ConverterGroup {
 		void convert(const std::string &originalFileName, const std::string &generatedFileName){
 			
 			if(!_converterGroup.empty()){
-				HtmlConverter html = *_converterGroup.front();
-				html.convert(originalFileName, generatedFileName);
+				
+				Converter * converter = _converterGroup.front();
+				//_converterGroup.push_back(converter);
+				converter->convert(originalFileName, generatedFileName);
+			
 			}else{}
 			
 			};
 		
 		void add(const std::string type){
 			if(type == "html"){
-				HtmlConverter * htmlConvert = new HtmlConverter;
+				Converter * htmlConvert = new HtmlConverter;
 				_converterGroup.push_back(htmlConvert);
+			}
+			if(type == "pdf_print"){
+				Converter * pdfPrintableConvert = new PdfConverter;
+				_converterGroup.push_back(pdfPrintableConvert);
 			}
 		};
 		
