@@ -21,9 +21,10 @@ class ConverterGroup {
 		
 		void convert(const std::string &originalFileName, const std::string &generatedFileName){
 			
-			HtmlConverter html = *_converterGroup.front();
-			html.convert(originalFileName, generatedFileName);
-			//*_converterGroup->front()->convert(originalFileName, generatedFileName);
+			if(!_converterGroup.empty()){
+				HtmlConverter html = *_converterGroup.front();
+				html.convert(originalFileName, generatedFileName);
+			}else{}
 			
 			};
 		
