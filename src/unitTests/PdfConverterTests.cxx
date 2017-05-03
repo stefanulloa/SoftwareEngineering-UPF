@@ -13,6 +13,8 @@ public:
 		TEST_CASE( testPdfWatermarkConvert_generateFile );
 		TEST_CASE( testPdfPrintableConvert_generateContent );
 		TEST_CASE( testPdfWatermarkConvert_generateContent );
+		//TEST_CASE( testPdfConvert_withInexistentOriginal );
+		//TEST_CASE( testPdfConvert_polymorphicCall );
 	}
 
 	/**
@@ -93,6 +95,38 @@ public:
 			"PDF generated from 'originals/Original.odt'. Watermark: 'Any Watermark'\n", 
 			LibFileSystem::fileContent( "generated/Prefix [watermark].pdf" ) 
 		);
+	}
+
+	void testPdfConvert_withInexistentOriginal()
+	{
+		PdfConverter converter;
+
+		try
+		{
+			converter.convert( "originals/Original.odt", "generated/Prefix" );
+			FAIL( "An exception should be caught!" );		
+		}
+		catch ( ... )
+		{
+			/*ASSERT_EQUALS(
+				"The original file does not exist",
+				e.what()
+			)*/
+		}
+	}
+
+	void testPdfConvert_polymorphicCall()
+	{
+		PdfConverter pdf;
+		Converter * converter = &pdf;
+		createOriginalFile( "Original.odt" );
+		converter->convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"PDF generated from 'originals/Original.odt'. Watermark: ''\n", 
+			LibFileSystem::fileContent( "generated/Prefix [printable].pdf" ) 
+		)
+		
 	}
 	
 };
