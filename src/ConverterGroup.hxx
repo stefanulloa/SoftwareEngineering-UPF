@@ -41,6 +41,7 @@ class ConverterGroup {
 			}
 			if(type == "pdf_mark"){
 				Converter * pdfPrintableConvert = new PdfConverter;
+				pdfPrintableConvert->activeWatermark("any_string");
 				_converterGroup.push_back(pdfPrintableConvert);
 			}
 		};
