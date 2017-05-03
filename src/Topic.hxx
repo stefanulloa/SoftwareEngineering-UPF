@@ -14,7 +14,7 @@ public:
 	} 
  
 		const std::string theme() {  
-			return "red";
+			return _theme;
 		}
 		
 		void theme( const std::string &theme) {
