@@ -64,7 +64,7 @@ class exceptionUnsupportedFormat: public exception
 	}
 	virtual const char* what() const throw()
 	{		
-		return "Unsupported format red";
+		return "Unsupported format";
 	}
 
 };
