@@ -3,6 +3,7 @@
 #include "MiniCppUnit.hxx"
 #include "PdfConverter.hxx"
 #include "Converter.hxx"
+#include "Exception.hxx"
 
 class PdfConverterTests : public TestFixture<PdfConverterTests>
 {
@@ -13,7 +14,7 @@ public:
 		TEST_CASE( testPdfWatermarkConvert_generateFile );
 		TEST_CASE( testPdfPrintableConvert_generateContent );
 		TEST_CASE( testPdfWatermarkConvert_generateContent );
-		//TEST_CASE( testPdfConvert_withInexistentOriginal );
+		TEST_CASE( testPdfConvert_withInexistentOriginal );
 		//TEST_CASE( testPdfConvert_polymorphicCall );
 	}
 
@@ -106,16 +107,16 @@ public:
 			converter.convert( "originals/Original.odt", "generated/Prefix" );
 			FAIL( "An exception should be caught!" );		
 		}
-		catch ( ... )
+		catch ( std::exception & e)
 		{
-			/*ASSERT_EQUALS(
+			ASSERT_EQUALS(
 				"The original file does not exist",
 				e.what()
-			)*/
+			)
 		}
 	}
 
-	void testPdfConvert_polymorphicCall()
+	/*void testPdfConvert_polymorphicCall()
 	{
 		PdfConverter pdf;
 		Converter * converter = &pdf;
@@ -127,7 +128,7 @@ public:
 			LibFileSystem::fileContent( "generated/Prefix [printable].pdf" ) 
 		)
 		
-	}
+	}*/
 	
 };
 

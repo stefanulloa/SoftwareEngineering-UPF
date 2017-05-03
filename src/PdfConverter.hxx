@@ -19,6 +19,7 @@ class PdfConverter : public Converter {
 			
 			std::string convertedName;
 			
+			try{
 			if (_watermarkString == ""){
 			convertedName = generatedFileName + " [printable].pdf";
 			}
@@ -26,7 +27,10 @@ class PdfConverter : public Converter {
 			convertedName = generatedFileName + " [watermark].pdf";
 			}
 			LibreOfficeTools::convertToPdf(originalFileName, convertedName, _watermarkString);
-	
+			}
+			catch ( ... ){
+				//throw exceptionInexistentOriginalFile();
+			}
 		}	
 		
 		void activeWatermark(const std::string &any){
