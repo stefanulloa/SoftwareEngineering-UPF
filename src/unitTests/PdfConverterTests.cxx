@@ -15,7 +15,7 @@ public:
 		TEST_CASE( testPdfPrintableConvert_generateContent );
 		TEST_CASE( testPdfWatermarkConvert_generateContent );
 		TEST_CASE( testPdfConvert_withInexistentOriginal );
-		//TEST_CASE( testPdfConvert_polymorphicCall );
+		TEST_CASE( testPdfConvert_polymorphicCall );
 	}
 
 	/**
@@ -116,7 +116,7 @@ public:
 		}
 	}
 
-	/*void testPdfConvert_polymorphicCall()
+	void testPdfConvert_polymorphicCall()
 	{
 		PdfConverter pdf;
 		Converter * converter = &pdf;
@@ -128,7 +128,7 @@ public:
 			LibFileSystem::fileContent( "generated/Prefix [printable].pdf" ) 
 		)
 		
-	}*/
+	}
 	
 };
 

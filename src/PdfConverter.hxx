@@ -4,7 +4,7 @@
 #include "Exception.hxx"
 #include "Converter.hxx"
 
-class PdfConverter : public Converter {
+class PdfConverter : public Converter  {
 	
 	private: 
 		std::string _watermarkString;
