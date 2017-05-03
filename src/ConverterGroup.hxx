@@ -25,9 +25,9 @@ class ConverterGroup {
 			
 			if(!_converterGroup.empty()){
 				
-				
-				Converter * converter = _converterGroup.front();
-				converter->convert(originalFileName, generatedFileName);
+				for(std::list<Converter*>::iterator it = _converterGroup.begin(); it!=_converterGroup.end(); ++it){
+				(*it)->convert(originalFileName, generatedFileName);
+				}
 			
 			}else{}
 			
