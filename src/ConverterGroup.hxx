@@ -7,25 +7,30 @@
 class ConverterGroup {
 	
 	protected:
-	HtmlConverter _oneHtmlConverter;
+	std::list<HtmlConverter*> _converterGroup;
 	
 	public:
-		ConverterGroup()
+		ConverterGroup():_converterGroup(0)
 		{	
 		} 
 
 		~ConverterGroup()
 		{
+			while(!_converterGroup.empty()) delete _converterGroup.front(), _converterGroup.pop_front();
 		}	
 		
 		void convert(const std::string &originalFileName, const std::string &generatedFileName){
-			_oneHtmlConverter.convert(originalFileName, generatedFileName);
+			
+			HtmlConverter html = *_converterGroup.front();
+			html.convert(originalFileName, generatedFileName);
+			//*_converterGroup->front()->convert(originalFileName, generatedFileName);
+			
 			};
 		
 		void add(const std::string type){
 			if(type == "html"){
-				HtmlConverter convert;
-				_oneHtmlConverter = convert;
+				HtmlConverter * htmlConvert = new HtmlConverter;
+				_converterGroup.push_back(htmlConvert);
 			}
 		};
 		

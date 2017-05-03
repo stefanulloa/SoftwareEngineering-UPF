@@ -10,6 +10,7 @@ public:
 	TEST_FIXTURE( ConverterGroupTests )
 	{
 		TEST_CASE( testConvert_withHtmlConverter );
+		TEST_CASE( testConvert_withoutConverter );
 	}
 
 	/**
@@ -51,6 +52,17 @@ public:
 
 		ASSERT_EQUALS(
 			"generated/Prefix [multiple HTML files].war\n", 
+			LibFileSystem::listDirectoryInOrder( "generated" ) 
+		); 
+	}
+	void testConvert_withoutConverter()
+	{
+		ConverterGroup converter;
+		createOriginalFile( "Original.odt" );
+		converter.convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"", 
 			LibFileSystem::listDirectoryInOrder( "generated" ) 
 		); 
 	}
