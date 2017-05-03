@@ -19,7 +19,7 @@ class ConverterGroup {
 		}	
 		
 		void convert(const std::string &originalFileName, const std::string &generatedFileName){
-			_oneHtmlConverter.convert(originalFileName, originalFileName);
+			_oneHtmlConverter.convert(originalFileName, generatedFileName);
 			};
 		
 		void add(const std::string type){
