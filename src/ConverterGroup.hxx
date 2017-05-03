@@ -16,12 +16,15 @@ class ConverterGroup {
 
 		~ConverterGroup()
 		{
-			while(!_converterGroup.empty()) delete _converterGroup.front(), _converterGroup.pop_front();
-		}	
+			for(std::list<Converter*>::iterator ib = _converterGroup.begin(); ib!=_converterGroup.end(); ++ib){
+			delete (*ib);
+			}
+		}
 		
 		void convert(const std::string &originalFileName, const std::string &generatedFileName){
 			
 			if(!_converterGroup.empty()){
+				
 				
 				Converter * converter = _converterGroup.front();
 				converter->convert(originalFileName, generatedFileName);
