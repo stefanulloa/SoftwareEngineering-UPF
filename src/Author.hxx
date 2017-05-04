@@ -55,8 +55,9 @@ public:
         std::string a;
         std::stringstream aw;
         for(WorkList::iterator it = _catalogue.begin(); it != _catalogue.end(); it++){
-            aw << "\t" << (*it)->isbn()<< ", " << "'" << (*it)->title() << "'" << ", " << "'" << "originals/" << (*it)->originalFile() << "'" << "\n";
+            aw << "\t" << (*it)->isbn()<< ", " << "'" << (*it)->title() << "'" << ", " << "'" << "originals/" << (*it)->originalFile() << "'" << "\n" << (*it)->topics();
             a = aw.str();
+		
         }
             return a;
     }

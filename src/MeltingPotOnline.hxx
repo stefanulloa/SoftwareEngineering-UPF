@@ -120,6 +120,16 @@ class MeltingPotOnline{
 		void associateTopicWithWork( const std::string &topic, const std::string &author, const std::string &title){
 		if (_topicos.empty()){
 			throw exceptionInexistentTopic();
+		}else{
+			for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
+				if( (*it)->name()==author ){
+					Work * work = &((*it)->findWork(title));
+					if(work){
+					work->addTopic(topic);
+					}
+				}
+			} 
+
 		}
 		}
 

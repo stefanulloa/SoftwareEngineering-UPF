@@ -45,6 +45,15 @@ public:
 	{
 	
 	}
+
+	~Work(){
+	TopicList::iterator it = _topics.begin();
+		while(it != _topics.end()){
+			Topic *pEliminarTopic = (*it);
+			delete pEliminarTopic;
+			it++;
+		}
+	}
 		 
 		const std::string author() const {  
 			return _author;
@@ -83,6 +92,21 @@ public:
 			ss << _isbn << ", " << "'" << _title << "'" << ", " << "'" << _originalFile << "'"; 
 			return ss.str();;
 		}
+		
+		void addTopic(const std::string theme){
+			Topic *topic = new Topic(theme);
+			_topics.push_back(topic);	
+		}		
+
+		const std::string topics() {
+        		std::string a;
+        		std::stringstream aw;
+        		for(TopicList::iterator it = _topics.begin(); it != _topics.end(); it++){
+           			aw << "\t\t'" << (*it)->theme()<< "'\n red";
+            			a = aw.str();
+        		}
+            		return a;
+    		}
 		
 };
 
