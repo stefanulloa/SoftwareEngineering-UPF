@@ -102,7 +102,7 @@ public:
         		std::string a;
         		std::stringstream aw;
         		for(TopicList::iterator it = _topics.begin(); it != _topics.end(); it++){
-           			aw << "\t\t'" << (*it)->theme()<< "'\n red";
+           			aw << "\t\t'" << (*it)->theme()<< "'\n";
             			a = aw.str();
         		}
             		return a;
