@@ -164,9 +164,9 @@ class MeltingPotOnline{
 							(*ito)->subscribeClient(client,(*ic)->email());
 							return;
 						}
-					}throw exceptionInexistentClient(); 
+					}throw exceptionInexistentClient();
 				}
-			}
+			}throw exceptionInexistentTopic();
 		}
 
 		const std::string listSubscribedToTopic(const std::string &topic){
