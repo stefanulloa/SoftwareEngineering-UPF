@@ -2,10 +2,12 @@
 #define _TOPIC_HXX_
 #include "Client.hxx"
 
+typedef std::list<Client*> ClientList;
+
 class Topic {
 
 private: std::string _theme;
-	 Client _subscriptor;
+	 ClientList _subscriptores;
 			
 public:
 	Topic() 
@@ -18,6 +20,17 @@ public:
 		: _theme(theme)
 	{	
 	} 
+
+	~Topic(){
+
+		ClientList::iterator ic = _subscriptores.begin();
+		while(ic != _subscriptores.end()){
+			Client *pEliminarClient = (*ic);
+			delete pEliminarClient;
+			ic++;
+		}
+
+		}
  
 		const std::string theme() {  
 			return _theme;
@@ -28,14 +41,16 @@ public:
 		}
 
 		void subscribeClient(const std::string &name, const std::string email){
-			_subscriptor.name(name);
-			_subscriptor.email(email);
+			Client *subscriptor = new Client(name, email);
+			_subscriptores.push_back(subscriptor);
 		}
 
 		const std::string listSubscribed(){
-			std::string name;
-			name = _subscriptor.name() + "\n";
-			return name;
+			std::string names;
+			for(ClientList::iterator ic = _subscriptores.begin(); ic != _subscriptores.end(); ic++){
+				names = (*ic)->name() + "\n";
+			}
+			return names;
 		}
 		
 };
