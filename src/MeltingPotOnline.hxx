@@ -5,6 +5,7 @@
 #include "Exception.hxx"
 #include "ConverterGroup.hxx"
 #include "Topic.hxx"
+#include "Client.hxx"
 
 typedef std::list<Author*> AuthorList;
 typedef std::list<Topic*> TopicList;
@@ -13,6 +14,7 @@ class MeltingPotOnline{
 	private: AuthorList _escritores;
 			 ConverterGroup _converters;
 			 TopicList _topicos;
+			 Client _cliente;
 			
 	
 	public:
@@ -131,6 +133,17 @@ class MeltingPotOnline{
 			} 
 
 		}
+		}
+
+		void addClient(const std::string &name, const std::string &email){
+			_cliente.name(name);
+			_cliente.email(email);
+		}
+
+		const std::string listClients(){
+			std::string clientInfo;
+			clientInfo = _cliente.name() + " <" + _cliente.email() + ">" + "\n red";
+			return clientInfo;
 		}
 
 };
