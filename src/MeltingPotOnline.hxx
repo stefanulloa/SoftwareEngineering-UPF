@@ -9,12 +9,13 @@
 
 typedef std::list<Author*> AuthorList;
 typedef std::list<Topic*> TopicList;
+typedef std::list<Client*> ClientList;
 
 class MeltingPotOnline{
 	private: AuthorList _escritores;
 			 ConverterGroup _converters;
 			 TopicList _topicos;
-			 Client _cliente;
+			 ClientList _clientes;
 			
 	
 	public:
@@ -39,6 +40,13 @@ class MeltingPotOnline{
 			Topic *pEliminarTopic = (*it);
 			delete pEliminarTopic;
 			it++;
+		}
+
+		ClientList::iterator ic = _clientes.begin();
+		while(ic != _clientes.end()){
+			Client *pEliminarClient = (*ic);
+			delete pEliminarClient;
+			ic++;
 		}
 
 		}
@@ -136,13 +144,15 @@ class MeltingPotOnline{
 		}
 
 		void addClient(const std::string &name, const std::string &email){
-			_cliente.name(name);
-			_cliente.email(email);
+			Client *cliente = new Client(name, email);
+			_clientes.push_back(cliente);
 		}
 
 		const std::string listClients(){
 			std::string clientInfo;
-			clientInfo = _cliente.name() + " <" + _cliente.email() + ">" + "\n";
+			for(ClientList::iterator ic = _clientes.begin(); ic != _clientes.end(); ic++){
+				clientInfo = (*ic)->name() + " <" + (*ic)->email() + ">" + "\n";
+			}
 			return clientInfo;
 		}
 
