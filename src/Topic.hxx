@@ -48,7 +48,7 @@ public:
 		const std::string listSubscribed(){
 			std::string names;
 			for(ClientList::iterator ic = _subscriptores.begin(); ic != _subscriptores.end(); ic++){
-				names = (*ic)->name() + "\n";
+				names += (*ic)->name() + "\n";
 			}
 			return names;
 		}
