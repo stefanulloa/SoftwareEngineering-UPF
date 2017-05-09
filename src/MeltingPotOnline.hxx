@@ -156,6 +156,26 @@ class MeltingPotOnline{
 			return clientInfo;
 		}
 
+		void subscribeClientToTopic(const std::string &client, const std::string topic){
+			for(TopicList::iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
+				if((*ito)->theme()==topic){
+					for(ClientList::iterator ic = _clientes.begin(); ic != _clientes.end(); ic++){
+						if((*ic)->name()==client){
+							(*ito)->subscribeClient(client,(*ic)->email());
+						}
+					}
+				}
+			}
+		}
+
+		const std::string listSubscribedToTopic(const std::string &topic){
+			for(TopicList::iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
+				if((*ito)->theme()==topic){
+					return (*ito)->listSubscribed();
+				}
+			}
+		}
+
 };
 
 #endif
