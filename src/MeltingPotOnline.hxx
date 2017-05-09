@@ -162,8 +162,9 @@ class MeltingPotOnline{
 					for(ClientList::iterator ic = _clientes.begin(); ic != _clientes.end(); ic++){
 						if((*ic)->name()==client){
 							(*ito)->subscribeClient(client,(*ic)->email());
+							return;
 						}
-					}
+					}throw exceptionInexistentClient(); 
 				}
 			}
 		}

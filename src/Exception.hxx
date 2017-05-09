@@ -81,4 +81,17 @@ class exceptionInexistentTopic: public exception
 	}
 
 };
+
+class exceptionInexistentClient: public exception
+{
+	public:
+	 exceptionInexistentClient()
+	{
+	}
+	virtual const char* what() const throw()
+	{		
+		return "The client does not exist red";
+	}
+
+};
 #endif
