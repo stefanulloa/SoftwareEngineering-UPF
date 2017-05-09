@@ -90,7 +90,7 @@ class exceptionInexistentClient: public exception
 	}
 	virtual const char* what() const throw()
 	{		
-		return "The client does not exist red";
+		return "The client does not exist";
 	}
 
 };
