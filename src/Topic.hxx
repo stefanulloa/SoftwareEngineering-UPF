@@ -34,7 +34,7 @@ public:
 
 		const std::string listSubscribed(){
 			std::string name;
-			name = _subscriptor.name() + "red";
+			name = _subscriptor.name() + "\n";
 			return name;
 		}
 		
