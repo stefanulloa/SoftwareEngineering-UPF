@@ -151,7 +151,7 @@ class MeltingPotOnline{
 		const std::string listClients(){
 			std::string clientInfo;
 			for(ClientList::iterator ic = _clientes.begin(); ic != _clientes.end(); ic++){
-				clientInfo = (*ic)->name() + " <" + (*ic)->email() + ">" + "\n";
+				clientInfo += (*ic)->name() + " <" + (*ic)->email() + ">" + "\n";
 			}
 			return clientInfo;
 		}
