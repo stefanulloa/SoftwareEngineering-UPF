@@ -142,7 +142,7 @@ class MeltingPotOnline{
 
 		const std::string listClients(){
 			std::string clientInfo;
-			clientInfo = _cliente.name() + " <" + _cliente.email() + ">" + "\n red";
+			clientInfo = _cliente.name() + " <" + _cliente.email() + ">" + "\n";
 			return clientInfo;
 		}
 
