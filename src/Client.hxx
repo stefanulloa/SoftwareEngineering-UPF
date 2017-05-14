@@ -35,7 +35,7 @@ public:
 		}
 
 		void update(std::string work, std::string author){
-			std::string to = name() + " " + email();
+			std::string to = name() + " " + "<" + email() + ">";
 			std::string subject = "new work " + work + " by " + author;
 			MailStub::theInstance().sendMail(to, subject);
 		}

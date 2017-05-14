@@ -1,15 +1,16 @@
 #include "LibFileSystem.hxx"
 #include "MiniCppUnit.hxx"
-#include "Client.hxx"
+#include "Topic.hxx"
 #include <fstream>
 
-class ClientTests : public TestFixture<ClientTests>
+class TopicTests : public TestFixture<TopicTests>
 {
 public:
-	TEST_FIXTURE( ClientTests )
+	TEST_FIXTURE( TopicTests )
 	{
-		TEST_CASE( testClientUpdate );
-	
+		
+		TEST_CASE( testTopicNotify );
+
 	}
 
 	/**
@@ -42,19 +43,21 @@ public:
 		os.close();
 	}
 
-	void testClientUpdate()
+	
+	void testTopicNotify()
 	{
-		Client client("A client", "a@mail.org");
-		client.update("A work", "An author");
+		Topic topic ("Some topic");
+		topic.subscribeClient("Another client", "anotherclient@mail.org");
+		topic.notify("Another work", "Another author");
 		
 		ASSERT_EQUALS(
-			"To: A client <a@mail.org>\n"
-			"Subject: new work A work by An author\n"
+			"To: Another client <anotherclient@mail.org>\n"
+			"Subject: new work Another work by Another author\n"
 			"\n",
 			MailStub::theInstance().sentMails()
 		);
 	}
-	
+
 };
 
-REGISTER_FIXTURE( ClientTests )
+REGISTER_FIXTURE( TopicTests )
