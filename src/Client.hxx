@@ -1,5 +1,6 @@
 #ifndef _CLIENT_HXX_
 #define _CLIENT_HXX_
+#include "MailStub.hxx"
 
 class Client {
 
@@ -32,6 +33,13 @@ public:
 		void email(const std::string &email) {
 			_email = email;
 		}
+
+		void update(std::string work, std::string author){
+			std::string to = name() + " " + email();
+			std::string subject = "new work " + work + " by " + author + "red";
+			MailStub::theInstance().sendMail(to, subject);
+		}
+
 		
 };
 
