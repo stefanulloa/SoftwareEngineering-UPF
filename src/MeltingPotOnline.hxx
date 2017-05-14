@@ -137,9 +137,6 @@ class MeltingPotOnline{
 					if(work){
 					work->addTopic(topic);
 					for(TopicList::iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
-						if( (*ito)->theme()=="Topic 1"){
-							(*ito)->notify("red", author);
-						}
 						if( (*ito)->theme()==topic){
 							(*ito)->notify(title, author);
 						}
