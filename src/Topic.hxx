@@ -55,7 +55,7 @@ public:
 
 		void notify(std::string work, std::string author){
 			for(ClientList::iterator ic = _subscriptores.begin(); ic != _subscriptores.end(); ic++){
-				(*ic)->update("red", author);
+				(*ic)->update(work, author);
 			}
 		}
 		
