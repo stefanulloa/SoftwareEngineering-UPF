@@ -1,10 +1,11 @@
 #ifndef _TOPIC_HXX_
 #define _TOPIC_HXX_
 #include "Client.hxx"
+#include "Subject.hxx"
 
 typedef std::list<Client*> ClientList;
 
-class Topic {
+class Topic : public Subject{
 
 private: std::string _theme;
 	 ClientList _subscriptores;

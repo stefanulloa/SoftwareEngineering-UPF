@@ -1,8 +1,9 @@
 #ifndef _CLIENT_HXX_
 #define _CLIENT_HXX_
 #include "MailStub.hxx"
+#include "Observer.hxx"
 
-class Client {
+class Client : public Observer{
 
 private: std::string _name;
 	std::string _email;
