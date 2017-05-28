@@ -8,6 +8,10 @@ public:
 
 	Observer()
 	{
+	}
+
+	virtual ~Observer()
+	{
 	}		
 
 		virtual void update(std::string work, std::string author) = 0;

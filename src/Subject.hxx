@@ -12,13 +12,17 @@ public:
 
 	Subject()
 	{
+	}
+
+	virtual ~Subject()
+	{
 	}		
 
 		void addObserver( Observer * observer ) {
 			_observers.push_back( observer );
 		}
 
-		void notify() {
+		void notify(std::string work, std::string author) {
 			for ( ObserverList::iterator it = _observers.begin();	it != _observers.end(); ++it){
 				(*it)->update(work, author);
 			}
