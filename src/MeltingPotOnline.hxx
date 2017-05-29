@@ -111,7 +111,7 @@ class MeltingPotOnline{
 			
 			_converters.convert(fileName.c_str(), commonPrefix.c_str());
 			
-			autorEncontrado->notify(title, "red");
+			autorEncontrado->notify(title, author);
 			
 		}
 		
