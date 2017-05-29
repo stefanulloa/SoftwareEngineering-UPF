@@ -215,7 +215,7 @@ class MeltingPotOnline{
 		const std::string listThematicChannels(){
 			std::string channels;
 			for(ChannelList::iterator it = _canales.begin(); it != _canales.end(); it++){
-				channels = (*it)->listThematicChannel();
+				channels += (*it)->listThematicChannel();
 			}
 			return channels;
 		}
