@@ -15,6 +15,7 @@ public:
 	}		
 
 		virtual void update(std::string work, std::string author) = 0;
+		virtual const std::string name() = 0;
 	
 };
 
