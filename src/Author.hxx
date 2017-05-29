@@ -2,10 +2,11 @@
 #define _AUTHOR_HXX_
 #include "Work.hxx"
 #include "Exception.hxx"
+#include "Subject.hxx"
 
 typedef std::list<Work*> WorkList;
 
-class Author{
+class Author : public Subject{
 	private: std::string _name;
 				bool _isEmployed;
 			std::string _oneWork;
@@ -85,6 +86,11 @@ public:
 		b = b + catalogue();
 		return b;
 		}	
+	}
+	
+	void subscribeClient(const std::string name,const std::string email){
+		Client *subscriptor = new Client(name, email);
+			addObserver(subscriptor);
 	}
 	
 };

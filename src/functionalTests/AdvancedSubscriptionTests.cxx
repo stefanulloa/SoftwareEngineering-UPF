@@ -2,13 +2,14 @@
 #include "MailStub.hxx"
 #include "MiniCppUnit.hxx"
 #include <fstream>
+#include "MeltingPotOnline.hxx"
 
 class AdvancedSubscriptionTests : public TestFixture<AdvancedSubscriptionTests>
 {
 public:
 	TEST_FIXTURE( AdvancedSubscriptionTests )
 	{
-		//TEST_CASE( testAddWork_notifyClientSubscribedToAuthor );
+		TEST_CASE( testAddWork_notifyClientSubscribedToAuthor );
 		//TEST_CASE( testAddWork_notifyTwoClientsSubscribedToTwoAuthors );
 		//TEST_CASE( testListThematicChannels );
 		//TEST_CASE( testRssByChannel_withoutNotification );
@@ -46,7 +47,7 @@ public:
 		os << "An original file" << std::endl;
 		os.close();
 	}
-	/*
+	
 	void testAddWork_notifyClientSubscribedToAuthor()
 	{
 		MeltingPotOnline business;
@@ -64,7 +65,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	void testAddWork_notifyTwoClientsSubscribedToTwoAuthors()
+	/*void testAddWork_notifyTwoClientsSubscribedToTwoAuthors()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "Saramago", false );

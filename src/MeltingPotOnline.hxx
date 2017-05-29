@@ -111,6 +111,8 @@ class MeltingPotOnline{
 			
 			_converters.convert(fileName.c_str(), commonPrefix.c_str());
 			
+			autorEncontrado->notify(title, "red");
+			
 		}
 		
 		void addTopic(const std::string &theme){
@@ -178,6 +180,19 @@ class MeltingPotOnline{
 			for(TopicList::iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
 				if((*ito)->theme()==topic){
 					return (*ito)->listSubscribed();
+				}
+			}
+		}
+		
+		void subscribeClientToAuthor(const std::string &client, const std::string author){
+			for(ClientList::iterator ic = _clientes.begin(); ic != _clientes.end(); ic++){
+				if((*ic)->name()==client){
+					for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
+						if((*it)->name()==author){
+							(*it)->subscribeClient(client,(*ic)->email());
+							return;
+						}
+					}
 				}
 			}
 		}
