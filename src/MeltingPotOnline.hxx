@@ -6,16 +6,19 @@
 #include "ConverterGroup.hxx"
 #include "Topic.hxx"
 #include "Client.hxx"
+#include "Channel.hxx"
 
 typedef std::list<Author*> AuthorList;
 typedef std::list<Topic*> TopicList;
 typedef std::list<Client*> ClientList;
+typedef std::list<Channel*> ChannelList;
 
 class MeltingPotOnline{
 	private: AuthorList _escritores;
 			 ConverterGroup _converters;
 			 TopicList _topicos;
 			 ClientList _clientes;
+			 ChannelList _canales;
 			
 	
 	public:
@@ -47,6 +50,13 @@ class MeltingPotOnline{
 			Client *pEliminarClient = (*ic);
 			delete pEliminarClient;
 			ic++;
+		}
+		
+		ChannelList::iterator ich = _canales.begin();
+		while(ich != _canales.end()){
+			Channel *pEliminarCanal = (*ich);
+			delete pEliminarCanal;
+			ich++;
 		}
 
 		}
@@ -195,6 +205,19 @@ class MeltingPotOnline{
 					}
 				}
 			}
+		}
+		
+		void addChannel(const std::string &title, const std::string &description){
+			Channel *canal = new Channel(title, description);
+			_canales.push_back(canal);		
+		}
+		
+		const std::string listThematicChannels(){
+			std::string channels;
+			for(ChannelList::iterator it = _canales.begin(); it != _canales.end(); it++){
+				channels = (*it)->listThematicChannel();
+			}
+			return channels;
 		}
 
 };

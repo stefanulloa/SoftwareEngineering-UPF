@@ -11,7 +11,7 @@ public:
 	{
 		TEST_CASE( testAddWork_notifyClientSubscribedToAuthor );
 		TEST_CASE( testAddWork_notifyTwoClientsSubscribedToTwoAuthors );
-		//TEST_CASE( testListThematicChannels );
+		TEST_CASE( testListThematicChannels );
 		//TEST_CASE( testRssByChannel_withoutNotification );
 		//TEST_CASE( testRssByChannel_withInexistentChannel );
 		//TEST_CASE( testRssByChannel_withNotifiedWork );
@@ -91,7 +91,7 @@ public:
 			MailStub::theInstance().sentMails()
 		)
 	}
-	/*void testListThematicChannels()
+	void testListThematicChannels()
 	{
 		MeltingPotOnline business;
 		business.addChannel( "Rivendel", "Rivendel: The MeltingPot fantasy channel" );
@@ -105,7 +105,7 @@ public:
 			business.listThematicChannels()
 		)
 	}
-	void testRssByChannel_withoutNotification()
+	/*void testRssByChannel_withoutNotification()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "Tolkien", false );
