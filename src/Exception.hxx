@@ -103,7 +103,7 @@ class exceptionInexistentChannel: public exception
 	}
 	virtual const char* what() const throw()
 	{		
-		return "red";
+		return "The thematic channel does not exist";
 	}
 
 };
