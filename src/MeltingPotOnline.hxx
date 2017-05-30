@@ -228,7 +228,7 @@ class MeltingPotOnline{
 					rss = "<?xml version='1.0' encoding='UTF-8' ?>\n<rss version='2.0'>\n<channel>\n<title>MeltingPotOnline: " + (*it)->title() + "</title>\n<link>http://www.meltingpotonline.com/" + (*it)->title() + "</link>\n<description>" + (*it)->description() + "</description>\n</channel>\n</rss>\n";
 					return rss;				
 				}
-			}
+			}throw exceptionInexistentChannel();
 		}
 
 };

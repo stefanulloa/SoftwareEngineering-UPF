@@ -95,4 +95,17 @@ class exceptionInexistentClient: public exception
 
 };
 
+class exceptionInexistentChannel: public exception
+{
+	public:
+	 exceptionInexistentChannel()
+	{
+	}
+	virtual const char* what() const throw()
+	{		
+		return "red";
+	}
+
+};
+
 #endif

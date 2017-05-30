@@ -13,7 +13,7 @@ public:
 		TEST_CASE( testAddWork_notifyTwoClientsSubscribedToTwoAuthors );
 		TEST_CASE( testListThematicChannels );
 		TEST_CASE( testRssByChannel_withoutNotification );
-		//TEST_CASE( testRssByChannel_withInexistentChannel );
+		TEST_CASE( testRssByChannel_withInexistentChannel );
 		//TEST_CASE( testRssByChannel_withNotifiedWork );
 		//TEST_CASE( testRssByChannel_subscribedToAuthorAndTopic );
 	}
@@ -123,7 +123,7 @@ public:
 			business.rssByChannel( "Rivendel" )
 		)
 	}
-	/*void testRssByChannel_withInexistentChannel()
+	void testRssByChannel_withInexistentChannel()
 	{
 		MeltingPotOnline business;
 		business.addChannel( "Rivendel", "Rivendel: The MeltingPot fantasy channel" );
@@ -141,7 +141,7 @@ public:
 			)
 		}
 	}
-	void testRssByChannel_withNotifiedWork()
+	/*void testRssByChannel_withNotifiedWork()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "Tolkien", false );
