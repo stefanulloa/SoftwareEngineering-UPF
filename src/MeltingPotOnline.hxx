@@ -220,6 +220,17 @@ class MeltingPotOnline{
 			return channels;
 		}
 
+		const std::string rssByChannel(const std::string channel){
+
+			std::string rss;
+			for(ChannelList::iterator it = _canales.begin(); it != _canales.end(); it++){
+				if((*it)->title()==channel){
+					rss = "<?xml version='1.0' encoding='UTF-8' ?>\n<rss version='2.0'>\n<channel>\n<title>MeltingPotOnline: " + (*it)->title() + "</title>\n<link>http://www.meltingpotonline.com/" + (*it)->title() + "</link>\n<description>" + (*it)->description() + "</description>\n</channel>\n</rss>\n";
+					return "red";				
+				}
+			}
+		}
+
 };
 
 #endif
