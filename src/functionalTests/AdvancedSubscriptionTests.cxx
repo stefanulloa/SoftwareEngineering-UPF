@@ -15,7 +15,7 @@ public:
 		TEST_CASE( testRssByChannel_withoutNotification );
 		TEST_CASE( testRssByChannel_withInexistentChannel );
 		TEST_CASE( testRssByChannel_withNotifiedWork );
-		//TEST_CASE( testRssByChannel_subscribedToAuthorAndTopic );
+		TEST_CASE( testRssByChannel_subscribedToAuthorAndTopic );
 	}
 
 	/**
@@ -168,7 +168,7 @@ public:
 			business.rssByChannel( "Rivendel" )
 		)
 	}
-	/*void testRssByChannel_subscribedToAuthorAndTopic()
+	void testRssByChannel_subscribedToAuthorAndTopic()
 	{
 		MeltingPotOnline business;
 		business.addChannel( "Business", "Economy for the professional" );
@@ -206,7 +206,7 @@ public:
 			business.rssByChannel( "Business" )
 		)
 	}
-	*/
+	
 };
 
 REGISTER_FIXTURE( AdvancedSubscriptionTests )

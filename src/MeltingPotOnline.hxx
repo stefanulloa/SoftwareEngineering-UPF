@@ -247,6 +247,19 @@ class MeltingPotOnline{
 			}
 		}
 
+		void subscribeChannelToTopic(const std::string &channel, const std::string topic){
+			for(ChannelList::iterator ic = _canales.begin(); ic != _canales.end(); ic++){
+				if((*ic)->title()==channel){
+					for(TopicList::iterator it = _topicos.begin(); it != _topicos.end(); it++){
+						if((*it)->theme()==topic){
+							(*it)->subscribeChannel((*ic));
+							return;
+						}
+					}
+				}
+			}
+		}
+
 };
 
 #endif

@@ -30,6 +30,10 @@ public:
 				addObserver(subscriptor);
 		}
 
+		void subscribeChannel(Channel *subscriptor){
+				//addObserver(subscriptor);
+		}
+
 };
 
 #endif
