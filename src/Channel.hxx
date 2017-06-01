@@ -65,7 +65,6 @@ public:
 			std::string items;
 			for(NoveltyList::iterator in = _novelties.begin(); in != _novelties.end(); in++){
 				items += "<item>\n<title>Novelty: '" + workNovelty((*in)) + "' by '" + authorNovelty((*in)) + "'</title>\n<link>http://www.meltingpotonline.com/infoWork?author='" + authorNovelty((*in)) + "'&title='" + workNovelty((*in)) + "'</link>\n</item>\n";
-				items = "red";
 			}
 			return items;
 		}
