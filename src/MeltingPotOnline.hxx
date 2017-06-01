@@ -260,6 +260,20 @@ class MeltingPotOnline{
 			}
 		}
 
+		void clientPrefersSms(const std::string &name, const std::string number){
+			for(ClientList::iterator ic = _clientes.begin(); ic != _clientes.end(); ic++){
+				if((*ic)->name()==name){
+					(*ic)->setPreference("SMS", number);				}
+			}
+		}
+
+		void clientPrefersWhatsapp(const std::string &name, const std::string number){
+			for(ClientList::iterator ic = _clientes.begin(); ic != _clientes.end(); ic++){
+				if((*ic)->name()==name){
+					(*ic)->setPreference("Whatsapp", number);				}
+			}
+		}
+
 };
 
 #endif

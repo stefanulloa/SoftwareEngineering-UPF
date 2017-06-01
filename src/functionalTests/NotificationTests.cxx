@@ -2,13 +2,14 @@
 #include "MailStub.hxx"
 #include "MiniCppUnit.hxx"
 #include <fstream>
+#include "MeltingPotOnline.hxx"
 
 class NotificationTests : public TestFixture<NotificationTests>
 {
 public:
 	TEST_FIXTURE( NotificationTests )
 	{
-		//TEST_CASE( testAssociateTopicWithWork_notifyUsersInDifferentWays );
+		TEST_CASE( testAssociateTopicWithWork_notifyUsersInDifferentWays );
 	}
 
 	/**
@@ -40,7 +41,7 @@ public:
 		os << "An original file" << std::endl;
 		os.close();
 	}
-	/*
+	
 	void testAssociateTopicWithWork_notifyUsersInDifferentWays()
 	{
 		MeltingPotOnline business;
@@ -76,7 +77,7 @@ public:
 			WhatsappStub::theInstance().sentMessages()
 		)
 	}
-	*/
+	
 };
 
 REGISTER_FIXTURE( NotificationTests )
