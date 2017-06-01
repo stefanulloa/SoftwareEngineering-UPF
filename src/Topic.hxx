@@ -31,7 +31,7 @@ public:
 		}
 
 		void subscribeChannel(Channel *subscriptor){
-				//addObserver(subscriptor);
+				addObserver(subscriptor);
 		}
 
 };
