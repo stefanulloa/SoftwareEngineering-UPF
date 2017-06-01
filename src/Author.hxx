@@ -19,15 +19,15 @@ public:
 	_oneWork ("")
 	{
 	}
-	
+
 	Author(const std::string &title, const bool &isEmployed)
 	:_name (title),
 	_isEmployed (isEmployed)
 	{
 	}
-	
+
 	~Author(){
-		
+
 		WorkList::iterator ib = _catalogue.begin();
 		while(ib != _catalogue.end()){
 			Work *pEl = (*ib);
@@ -36,10 +36,10 @@ public:
 		}
 
 	}
-		
+
 	const std::string name() const {
 		return _name;
-	}	
+	}
 	void name(const std::string &name){
 	_name = name;
 	}
@@ -58,7 +58,7 @@ public:
         for(WorkList::iterator it = _catalogue.begin(); it != _catalogue.end(); it++){
             aw << "\t" << (*it)->isbn()<< ", " << "'" << (*it)->title() << "'" << ", " << "'" << "originals/" << (*it)->originalFile() << "'" << "\n" << (*it)->topics();
             a = aw.str();
-		
+
         }
             return a;
     }
@@ -85,14 +85,17 @@ public:
 		std::string b = a + " [contracted]\n";
 		b = b + catalogue();
 		return b;
-		}	
+		}
 	}
-	
-	void subscribeClient(const std::string name,const std::string email){
-		Client *subscriptor = new Client(name, email);
+
+	void subscribeClient(Client *subscriptor){
 			addObserver(subscriptor);
 	}
-	
+
+	void subscribeChannel(Channel *subscriptorChannel){
+			addObserver(subscriptorChannel);
+	}
+
 };
 
 #endif

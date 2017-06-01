@@ -47,7 +47,7 @@ public:
 		os << "An original file" << std::endl;
 		os.close();
 	}
-	
+
 	void testAddWork_notifyClientSubscribedToAuthor()
 	{
 		MeltingPotOnline business;
@@ -110,7 +110,7 @@ public:
 		MeltingPotOnline business;
 		business.addAuthor( "Tolkien", false );
 		business.addChannel( "Rivendel", "Rivendel: The MeltingPot fantasy channel" );
-		
+
 		ASSERT_EQUALS(
 			"<?xml version='1.0' encoding='UTF-8' ?>\n"
 			"<rss version='2.0'>\n"
@@ -210,4 +210,3 @@ public:
 };
 
 REGISTER_FIXTURE( AdvancedSubscriptionTests )
-

@@ -2,13 +2,14 @@
 #include "MiniCppUnit.hxx"
 #include "Topic.hxx"
 #include <fstream>
+#include "Client.hxx"
 
 class TopicTests : public TestFixture<TopicTests>
 {
 public:
 	TEST_FIXTURE( TopicTests )
 	{
-		
+
 		TEST_CASE( testTopicNotify );
 
 	}
@@ -43,19 +44,22 @@ public:
 		os.close();
 	}
 
-	
+
 	void testTopicNotify()
 	{
 		Topic topic ("Some topic");
-		topic.subscribeClient("Another client", "anotherclient@mail.org");
+		Client *client = new Client("Another client", "anotherclient@mail.org");
+		topic.subscribeClient(client);
 		topic.notify("Another work", "Another author");
-		
+
 		ASSERT_EQUALS(
 			"To: Another client <anotherclient@mail.org>\n"
 			"Subject: new work Another work by Another author\n"
 			"\n",
 			MailStub::theInstance().sentMails()
 		);
+
+		delete(client);
 	}
 
 };

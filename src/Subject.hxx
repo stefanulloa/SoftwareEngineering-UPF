@@ -2,15 +2,17 @@
 #define _SUBJECT_HXX_
 #include "MailStub.hxx"
 #include "Observer.hxx"
+#include "Client.hxx"
+#include "Channel.hxx"
 
 typedef std::list<Observer*> ObserverList;
 
 class Subject {
 
-private:  
+private:
 
 ObserverList _observers;
-			
+
 public:
 
 	Subject()
@@ -19,14 +21,15 @@ public:
 
 	virtual ~Subject(){
 
-		ObserverList::iterator ic = _observers.begin();
+		/*ObserverList::iterator ic = _observers.begin();
 		while(ic != _observers.end()){
 			Observer *pEliminarObserver = (*ic);
 			delete pEliminarObserver;
 			ic++;
-		}
+		}*/
+		//No hace falta porque como se pasa por puntero cada Observer, estos se eliminan en los destructores de las clases que los pasan
 
-		}		
+		}
 
 		void addObserver( Observer * observer ) {
 			_observers.push_back( observer );
@@ -37,7 +40,7 @@ public:
 				(*it)->update(work, author);
 			}
 		}
-		
+
 		virtual const std::string listSubscribed(){
 			std::string names;
 			for(ObserverList::iterator ic = _observers.begin(); ic != _observers.end(); ic++){
@@ -46,7 +49,7 @@ public:
 			return names;
 		}
 
-		
+
 };
 
 #endif
