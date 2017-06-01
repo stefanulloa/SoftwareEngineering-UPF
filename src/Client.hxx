@@ -55,12 +55,12 @@ public:
 		void update(std::string work, std::string author){
 			if(preference() == "SMS"){
 				std::string to = number();
-			std::string subject = "red[MeltingPot] new work " + work + " by " + author;
+			std::string subject = "[MeltingPot] new work " + work + " by " + author;
 			SmsStub::theInstance().sendSms(to, subject);
 			}
 			else if(preference() == "Whatsapp"){
 			std::string to = number();
-			std::string subject = "red[MeltingPot] new work " + work + " by " + author;
+			std::string subject = "[MeltingPot] new work " + work + " by " + author;
 			WhatsappStub::theInstance().sendWhatsapp(to, subject);
 			}
 			else {
