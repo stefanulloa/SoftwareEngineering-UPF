@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testListThematicChannels );
 		TEST_CASE( testRssByChannel_withoutNotification );
 		TEST_CASE( testRssByChannel_withInexistentChannel );
-		//TEST_CASE( testRssByChannel_withNotifiedWork );
+		TEST_CASE( testRssByChannel_withNotifiedWork );
 		//TEST_CASE( testRssByChannel_subscribedToAuthorAndTopic );
 	}
 
@@ -141,7 +141,7 @@ public:
 			)
 		}
 	}
-	/*void testRssByChannel_withNotifiedWork()
+	void testRssByChannel_withNotifiedWork()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "Tolkien", false );
@@ -168,7 +168,7 @@ public:
 			business.rssByChannel( "Rivendel" )
 		)
 	}
-	void testRssByChannel_subscribedToAuthorAndTopic()
+	/*void testRssByChannel_subscribedToAuthorAndTopic()
 	{
 		MeltingPotOnline business;
 		business.addChannel( "Business", "Economy for the professional" );

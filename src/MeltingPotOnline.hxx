@@ -225,7 +225,10 @@ class MeltingPotOnline{
 			std::string rss;
 			for(ChannelList::iterator it = _canales.begin(); it != _canales.end(); it++){
 				if((*it)->title()==channel){
-					rss = "<?xml version='1.0' encoding='UTF-8' ?>\n<rss version='2.0'>\n<channel>\n<title>MeltingPotOnline: " + (*it)->title() + "</title>\n<link>http://www.meltingpotonline.com/" + (*it)->title() + "</link>\n<description>" + (*it)->description() + "</description>\n</channel>\n</rss>\n";
+					rss = "<?xml version='1.0' encoding='UTF-8' ?>\n<rss version='2.0'>\n<channel>\n<title>MeltingPotOnline: " + (*it)->title() + "</title>\n<link>http://www.meltingpotonline.com/" + (*it)->title() + "</link>\n<description>" + (*it)->description() + "</description>\n";
+					rss += (*it)->listItems();
+					rss += "</channel>\n</rss>\n";
+
 					return rss;
 				}
 			}throw exceptionInexistentChannel();
