@@ -32,3 +32,10 @@ Seminar 5:
 - Las cardinalidades son incorrectas
 - Relación Author <-> Work es incorrecta
 - Los atributos estan mal expresados (una forma correcta seria, Works: list< Work* > )
+
+Seminar 6:
+- Facade should manage the memory of Format objects
+- Format class and the Adapter class do not have a "uses" relationship. Instead, Format class should manage the memory of Adapter objects
+- PDFAdpater and HTMLAdpater classes depend on (or use) the exisitng libraries (LibreOfficeTools and OO_WarGeneration)
+
+Seminar 7:
