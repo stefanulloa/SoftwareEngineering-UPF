@@ -1,8 +1,11 @@
 #ifndef _CLIENT_HXX_
 #define _CLIENT_HXX_
 #include <string>
-#include "MailStub.hxx"
 #include "Observer.hxx"
+#include "SendStrategy.hxx"
+#include "SendSms.hxx"
+#include "SendWhatsapp.hxx"
+#include "SendEmail.hxx"
 
 class Client : public Observer{
 
@@ -10,6 +13,7 @@ private: std::string _name;
 	std::string _email;
 	std::string _preference;
 	std::string _number;
+	SendStrategy* _sendStrategy = NULL; 
 			
 public:
 
@@ -53,21 +57,28 @@ public:
 		}
 
 		void update(std::string work, std::string author){
-			if(preference() == "SMS"){
-				std::string to = number();
-			std::string subject = "[MeltingPot] new work " + work + " by " + author;
-			SmsStub::theInstance().sendSms(to, subject);
+			
+			std::string user;
+			if(_preference == "SMS"){
+				user = number();
+				_sendStrategy = new SendSms();
+				_sendStrategy->send(work, author, user);
+				//delete(_sendStrategy);
 			}
-			else if(preference() == "Whatsapp"){
-			std::string to = number();
-			std::string subject = "[MeltingPot] new work " + work + " by " + author;
-			WhatsappStub::theInstance().sendWhatsapp(to, subject);
+			else if(_preference == "Whatsapp"){
+				user = number();
+				_sendStrategy = new SendWhatsapp();
+				_sendStrategy->send(work, author, user);
+				//delete(_sendStrategy);
 			}
 			else {
-			std::string to = name() + " " + "<" + email() + ">";
-			std::string subject = "new work " + work + " by " + author;
-			MailStub::theInstance().sendMail(to, subject);
+				user = name() + " " + "<" + email() + ">";
+				_sendStrategy = new SendEmail();
+				_sendStrategy->send(work, author, user);
+				//delete(_sendStrategy);
 			}
+			
+			delete _sendStrategy;
 		}
 
 		
