@@ -39,3 +39,10 @@ Seminar 6:
 - PDFAdpater and HTMLAdpater classes depend on (or use) the exisitng libraries (LibreOfficeTools and OO_WarGeneration)
 
 Seminar 7:
+- When providing the final class diagram, you should include all other previous classes, methods and attributes and patterns
+- Subject is connected with Observer class (need to have a relationship and cardinalities too) 
+- Where is the Topic class? When new Topics are introduced, it should notify the Observer
+- ThematicChannel class should be a subject because it generates new news items
+
+Seminar 8:
+- 
