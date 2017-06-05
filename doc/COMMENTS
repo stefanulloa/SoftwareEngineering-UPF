@@ -45,4 +45,11 @@ Seminar 7:
 - ThematicChannel class should be a subject because it generates new news items
 
 Seminar 8:
+- Wrong design of the Factory method pattern 
+- Conrete Creators depend on Concrete Prodcuts 
+- Don't use the same name for two classes in the same class diagram
+- Adapter design pattern design is missing in the final diagram
+- Client should manage memory of the NotificationFormat objects
+
+Seminar 9:
 - 
