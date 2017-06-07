@@ -4,7 +4,7 @@
 #include "View.hxx"
 #include "Controller.hxx"
 
-//#include "MeltingPotOnline.hxx"
+#include "MeltingPotOnline.hxx"
 
 int main( int argc, char *argv[] ) {
 	QApplication app( argc, argv );
@@ -12,8 +12,8 @@ int main( int argc, char *argv[] ) {
 	View view;
 	Controller controller;
 
-	//MeltingPotOnline business;
-	//model = &business;
+	MeltingPotOnline business;
+	model = &business;
 
 	QObject::connect( model, SIGNAL( modify( const std::string &, const std::string & ) ),
 		              &view, SLOT( updateContent( const std::string &, const std::string & ) ) );

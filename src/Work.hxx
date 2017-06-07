@@ -2,6 +2,7 @@
 #define _WORK_HXX_
 #include "Topic.hxx"
 #include "Exception.hxx"
+#include <sstream>
 
 typedef std::list<Topic*> TopicList;
 

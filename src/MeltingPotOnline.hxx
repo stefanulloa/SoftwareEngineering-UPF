@@ -7,13 +7,15 @@
 #include "Topic.hxx"
 #include "Client.hxx"
 #include "Channel.hxx"
+#include "Model.hxx"
+#include <sstream>
 
 typedef std::list<Author*> AuthorList;
 typedef std::list<Topic*> TopicList;
 typedef std::list<Client*> ClientList;
 typedef std::list<Channel*> ChannelList;
 
-class MeltingPotOnline{
+class MeltingPotOnline : public Model{
 	private: AuthorList _escritores;
 			 ConverterGroup _converters;
 			 TopicList _topicos;
@@ -60,9 +62,9 @@ class MeltingPotOnline{
 		}
 
 		}
-		const std::string catalogue() {
+		std::string catalogue() const {
 			std::string a;
-			for(AuthorList::iterator it = _escritores.begin(); it != _escritores.end(); it++){
+			for(AuthorList::const_iterator it = _escritores.begin(); it != _escritores.end(); it++){
             a += (*it)->name();
             if (!(*it)->isEmployed()){
 			a += " [external]\n";
@@ -106,7 +108,7 @@ class MeltingPotOnline{
 
 		}
 
-		void addWork(const std::string &author, const std::string &title, const int &isbn, const std::string &originalFile){
+		void addWork(const std::string &author, const std::string &title, int isbn, const std::string &originalFile){
 
 			std::string fileName = "originals/" + originalFile;
 			std::ifstream file (fileName.c_str());
@@ -130,9 +132,9 @@ class MeltingPotOnline{
 			_topicos.push_back(topic);
 		}
 
-		const std::string listTopics(){
+		std::string listTopics() const{
 			std::string tops;
-			for(TopicList::iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
+			for(TopicList::const_iterator ito = _topicos.begin(); ito != _topicos.end(); ito++){
 				tops += (*ito)->theme();
 				tops += "\n";
 			}

@@ -3,6 +3,7 @@
 #include "Work.hxx"
 #include "Exception.hxx"
 #include "Subject.hxx"
+#include <sstream>
 
 typedef std::list<Work*> WorkList;
 
