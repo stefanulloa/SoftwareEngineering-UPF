@@ -52,4 +52,8 @@ Seminar 8:
 - Client should manage memory of the NotificationFormat objects
 
 Seminar 9:
+- It is better to pass by reference using const to avoid copies of objects and null values
+- Fraction <Type> is the better way to refer Fraction objects types
+
+Seminar 10:
 - 
