@@ -56,4 +56,5 @@ Seminar 9:
 - Fraction <Type> is the better way to refer Fraction objects types
 
 Seminar 10:
-- 
+- Where are the GUI components like lables, textbox etc.. in the View class?  
+- When representing the MVC pattern, the three modules (Model, View, Controller) should be related classes
